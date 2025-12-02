@@ -164,7 +164,7 @@
             // 
             // guna2GradientButton1
             // 
-            guna2GradientButton1.BorderRadius = 25;
+            guna2GradientButton1.BorderRadius = 19;
             guna2GradientButton1.CustomizableEdges = customizableEdges1;
             guna2GradientButton1.DisabledState.BorderColor = Color.DarkGray;
             guna2GradientButton1.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -178,7 +178,7 @@
             guna2GradientButton1.Margin = new Padding(3, 2, 3, 2);
             guna2GradientButton1.Name = "guna2GradientButton1";
             guna2GradientButton1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2GradientButton1.Size = new Size(256, 34);
+            guna2GradientButton1.Size = new Size(256, 37);
             guna2GradientButton1.TabIndex = 6;
             guna2GradientButton1.Text = "LOGIN";
             // 
