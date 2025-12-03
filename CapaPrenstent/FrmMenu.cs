@@ -83,5 +83,17 @@ namespace CapaPresent
             MenuAnimacion.Start();
 
         }
+        private void AbrirUC(UserControl uc)
+        {
+            uc.Dock = DockStyle.Fill;
+            PanelContenedor.Controls.Clear();
+            PanelContenedor.Controls.Add(uc);
+            uc.BringToFront();
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            AbrirUC(new UserControls.UC_Clientes());
+        }
     }
 }
