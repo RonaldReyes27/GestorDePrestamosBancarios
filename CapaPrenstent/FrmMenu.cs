@@ -52,29 +52,13 @@ namespace CapaPresent
 
         private void MenuAnimacion_Tick(object sender, EventArgs e)
         {
-            if (menuExpandido)
-            {
-                // Contraer menú
-                panelMenu.Width -= 10;
-                if (panelMenu.Width <= menuAnchoMin)
-                {
-                    menuExpandido = false;
-                    MenuAnimacion.Stop();
-                }
-            }
-            else
-            {
-                // Expandir menú
-                panelMenu.Width += 10;
-                if (panelMenu.Width >= menuAnchoMax)
-                {
-                    menuExpandido = true;
-                    MenuAnimacion.Stop();
-                }
-            }
+            PanelContenedor.Controls.Clear();
 
-            // Actualizar textos e iconos
-            AjustarMenu();
+            uc.Dock = DockStyle.Fill; // 🔥 Asegura ajuste perfecto
+            PanelContenedor.Controls.Add(uc);
+
+            uc.BringToFront();
+            PanelContenedor.Update();
 
         }
 
@@ -85,15 +69,23 @@ namespace CapaPresent
         }
         private void AbrirUC(UserControl uc)
         {
-            uc.Dock = DockStyle.Fill;
             PanelContenedor.Controls.Clear();
+
+            uc.Dock = DockStyle.Fill; // 🔥 Asegura ajuste perfecto
             PanelContenedor.Controls.Add(uc);
+
             uc.BringToFront();
+            PanelContenedor.Update();
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
             AbrirUC(new UserControls.UC_Clientes());
+        }
+
+        private void btnSolicitar_Click(object sender, EventArgs e)
+        {
+            AbrirUC(new UserControls.UcNuevoPrestamo());
         }
     }
 }

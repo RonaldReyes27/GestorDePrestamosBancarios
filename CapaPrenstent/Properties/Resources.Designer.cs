@@ -73,9 +73,29 @@ namespace CapaPresent.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bolsa_dinero {
+            get {
+                object obj = ResourceManager.GetObject("bolsa dinero", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Book {
             get {
                 object obj = ResourceManager.GetObject("Book", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap buscar {
+            get {
+                object obj = ResourceManager.GetObject("buscar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,6 +163,16 @@ namespace CapaPresent.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap notas {
+            get {
+                object obj = ResourceManager.GetObject("notas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap NuevoPrestamo {
             get {
                 object obj = ResourceManager.GetObject("NuevoPrestamo", resourceCulture);
@@ -156,6 +186,16 @@ namespace CapaPresent.Properties {
         internal static System.Drawing.Bitmap NuevoPrestamo1 {
             get {
                 object obj = ResourceManager.GetObject("NuevoPrestamo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap prestamo {
+            get {
+                object obj = ResourceManager.GetObject("prestamo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

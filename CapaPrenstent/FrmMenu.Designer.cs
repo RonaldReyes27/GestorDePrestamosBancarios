@@ -322,6 +322,7 @@
             btnSolicitar.TabIndex = 4;
             btnSolicitar.Text = "Solicitar Prestamo";
             btnSolicitar.TextAlign = HorizontalAlignment.Left;
+            btnSolicitar.Click += btnSolicitar_Click;
             // 
             // MenuAnimacion
             // 
@@ -330,8 +331,9 @@
             // 
             // PanelContenedor
             // 
+            PanelContenedor.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            PanelContenedor.AutoScroll = true;
             PanelContenedor.CustomizableEdges = customizableEdges1;
-            PanelContenedor.Dock = DockStyle.Fill;
             PanelContenedor.Location = new Point(222, 80);
             PanelContenedor.Name = "PanelContenedor";
             PanelContenedor.ShadowDecoration.CustomizableEdges = customizableEdges2;
