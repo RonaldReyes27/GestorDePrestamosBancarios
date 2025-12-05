@@ -11,4 +11,13 @@
     <ProjectReference Include="..\GestorDePrestamosBancarios\CapaDatos.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="02ClasesClientes\" />
+    <Folder Include="03ClasePrestamos\" />
+    <Folder Include="04ClaseCuotas\" />
+    <Folder Include="05ClasePago\" />
+    <Folder Include="06ClaseMora\" />
+    <Folder Include="Enum\" />
+  </ItemGroup>
+
 </Project>
