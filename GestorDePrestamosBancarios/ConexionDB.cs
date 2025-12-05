@@ -1,2 +1,10 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using System;
+using System.Data.SqlClient;
+
+namespace GestorDePrestamosBancarios
+{
+    public class ConexionDB
+    {
+       public static string Conexion = "Server=.;Database=GestorDePrestamosBancarios;Integrated Security=true";
+    }
+}
