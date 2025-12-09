@@ -1,16 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
-	<UseWindowsForms>true</UseWindowsForms>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <OutputType>Library</OutputType>
   </PropertyGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\GestorDePrestamosBancarios\CapaDatos.csproj" />
-  </ItemGroup>
 
   <ItemGroup>
     <Folder Include="03ClasePrestamos\" />
@@ -18,6 +13,10 @@
     <Folder Include="05ClasePago\" />
     <Folder Include="06ClaseMora\" />
     <Folder Include="Enum\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj" />
   </ItemGroup>
 
 </Project>

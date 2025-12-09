@@ -123,6 +123,16 @@ namespace CapaPresent.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Depositar {
+            get {
+                object obj = ResourceManager.GetObject("Depositar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Historial {
             get {
                 object obj = ResourceManager.GetObject("Historial", resourceCulture);

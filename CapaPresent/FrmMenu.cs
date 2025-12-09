@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaPresent.UserControls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace CapaPresent
 {
     public partial class FrmMenu : Form
     {
+        private UC_Clientes clientesUC = new UC_Clientes();
+
         bool menuExpandido = true;   // true = abierto; false = colapsado
         int menuAnchoMax = 230;
         int menuAnchoMin = 60;
@@ -52,15 +55,37 @@ namespace CapaPresent
 
         private void MenuAnimacion_Tick(object sender, EventArgs e)
         {
-            PanelContenedor.Controls.Clear();
+           
 
-            uc.Dock = DockStyle.Fill; // 🔥 Asegura ajuste perfecto
-            PanelContenedor.Controls.Add(uc);
+            if (menuExpandido)
+            {
+                // CONTRAYENDO
+                panelMenu.Width -= 10;
+                if (panelMenu.Width <= menuAnchoMin)
+                {
+                    menuExpandido = false;
+                    MenuAnimacion.Stop();
+                    AjustarMenu();
+                }
+            }
+            else
+            {
+                // EXPANDIENDO
+                panelMenu.Width += 10;
+                if (panelMenu.Width >= menuAnchoMax)
+                {
+                    menuExpandido = true;
+                    MenuAnimacion.Stop();
+                    AjustarMenu();
+                }
+            }
 
-            uc.BringToFront();
-            PanelContenedor.Update();
-
+            // 🔥 Esto arregla tu problema: reacomoda el contenedor en cada frame
+            PanelContenedor.Left = panelMenu.Width;
+            PanelContenedor.Width = this.Width - panelMenu.Width;
         }
+
+
 
         private void btnMenu_Click_1(object sender, EventArgs e)
         {
@@ -70,12 +95,9 @@ namespace CapaPresent
         private void AbrirUC(UserControl uc)
         {
             PanelContenedor.Controls.Clear();
-
-            uc.Dock = DockStyle.Fill; // 🔥 Asegura ajuste perfecto
+            uc.Dock = DockStyle.Fill;
             PanelContenedor.Controls.Add(uc);
-
             uc.BringToFront();
-            PanelContenedor.Update();
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
@@ -86,6 +108,16 @@ namespace CapaPresent
         private void btnSolicitar_Click(object sender, EventArgs e)
         {
             AbrirUC(new UserControls.UcNuevoPrestamo());
+        }
+
+        private void btnCobrar_Click(object sender, EventArgs e)
+        {
+            AbrirUC(new UserControls.UC_Cobrar());
+        }
+
+        private void btnHistorial_Click(object sender, EventArgs e)
+        {
+            AbrirUC(new UserControls.UC_HistorialPrestamos());
         }
     }
 }

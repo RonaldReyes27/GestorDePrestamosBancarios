@@ -28,32 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             panelTools = new Guna.UI2.WinForms.Guna2Panel();
+            btnBuscarCliente = new Guna.UI2.WinForms.Guna2CircleButton();
             txtBuscar = new Guna.UI2.WinForms.Guna2TextBox();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            cmbFiltro = new Guna.UI2.WinForms.Guna2ComboBox();
+            cbBuscarPor = new Guna.UI2.WinForms.Guna2ComboBox();
             btnNuevoCliente = new Guna.UI2.WinForms.Guna2Button();
             dgvClientes = new Guna.UI2.WinForms.Guna2DataGridView();
+            ColIdCliente = new DataGridViewTextBoxColumn();
             ColNombre = new DataGridViewTextBoxColumn();
-            colTipoDoc = new DataGridViewTextBoxColumn();
-            colDocumento = new DataGridViewTextBoxColumn();
-            colCiudad = new DataGridViewTextBoxColumn();
-            colCorreo = new DataGridViewTextBoxColumn();
-            colTelefono = new DataGridViewTextBoxColumn();
-            colEditar = new DataGridViewButtonColumn();
-            colEliminar = new DataGridViewButtonColumn();
+            ColCiudad = new DataGridViewTextBoxColumn();
+            ColCorreo = new DataGridViewTextBoxColumn();
+            ColTelefono = new DataGridViewTextBoxColumn();
             panelTools.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
             SuspendLayout();
@@ -72,23 +71,43 @@
             // panelTools
             // 
             panelTools.BackColor = Color.White;
+            panelTools.Controls.Add(btnBuscarCliente);
             panelTools.Controls.Add(txtBuscar);
             panelTools.Controls.Add(guna2HtmlLabel2);
             panelTools.Controls.Add(guna2HtmlLabel1);
-            panelTools.Controls.Add(cmbFiltro);
+            panelTools.Controls.Add(cbBuscarPor);
             panelTools.Controls.Add(btnNuevoCliente);
-            panelTools.CustomizableEdges = customizableEdges7;
+            panelTools.CustomizableEdges = customizableEdges8;
             panelTools.Dock = DockStyle.Top;
             panelTools.Location = new Point(0, 0);
             panelTools.Name = "panelTools";
-            panelTools.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            panelTools.ShadowDecoration.CustomizableEdges = customizableEdges9;
             panelTools.Size = new Size(952, 119);
             panelTools.TabIndex = 5;
+            // 
+            // btnBuscarCliente
+            // 
+            btnBuscarCliente.DisabledState.BorderColor = Color.DarkGray;
+            btnBuscarCliente.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnBuscarCliente.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnBuscarCliente.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnBuscarCliente.FillColor = Color.Gray;
+            btnBuscarCliente.Font = new Font("Segoe UI", 9F);
+            btnBuscarCliente.ForeColor = Color.White;
+            btnBuscarCliente.Image = Properties.Resources.buscar;
+            btnBuscarCliente.ImageSize = new Size(35, 35);
+            btnBuscarCliente.Location = new Point(766, 60);
+            btnBuscarCliente.Name = "btnBuscarCliente";
+            btnBuscarCliente.ShadowDecoration.CustomizableEdges = customizableEdges1;
+            btnBuscarCliente.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            btnBuscarCliente.Size = new Size(42, 43);
+            btnBuscarCliente.TabIndex = 5;
+            btnBuscarCliente.Click += btnBuscarCliente_Click;
             // 
             // txtBuscar
             // 
             txtBuscar.BorderRadius = 8;
-            txtBuscar.CustomizableEdges = customizableEdges1;
+            txtBuscar.CustomizableEdges = customizableEdges2;
             txtBuscar.DefaultText = "";
             txtBuscar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtBuscar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -101,7 +120,7 @@
             txtBuscar.Name = "txtBuscar";
             txtBuscar.PlaceholderText = "Buscar por...";
             txtBuscar.SelectedText = "";
-            txtBuscar.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            txtBuscar.ShadowDecoration.CustomizableEdges = customizableEdges3;
             txtBuscar.Size = new Size(212, 36);
             txtBuscar.TabIndex = 3;
             // 
@@ -115,29 +134,28 @@
             guna2HtmlLabel2.TabIndex = 2;
             guna2HtmlLabel2.Text = "Buscar Por :";
             // 
-            // cmbFiltro
+            // cbBuscarPor
             // 
-            cmbFiltro.BackColor = Color.Transparent;
-            cmbFiltro.BorderRadius = 8;
-            cmbFiltro.CustomizableEdges = customizableEdges3;
-            cmbFiltro.DrawMode = DrawMode.OwnerDrawFixed;
-            cmbFiltro.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbFiltro.FocusedColor = Color.FromArgb(94, 148, 255);
-            cmbFiltro.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            cmbFiltro.Font = new Font("Segoe UI", 10F);
-            cmbFiltro.ForeColor = Color.FromArgb(68, 88, 112);
-            cmbFiltro.ItemHeight = 30;
-            cmbFiltro.Items.AddRange(new object[] { "Clientes", "Documentos", "Ciudad" });
-            cmbFiltro.Location = new Point(393, 67);
-            cmbFiltro.Name = "cmbFiltro";
-            cmbFiltro.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            cmbFiltro.Size = new Size(140, 36);
-            cmbFiltro.TabIndex = 1;
+            cbBuscarPor.BackColor = Color.Transparent;
+            cbBuscarPor.BorderRadius = 8;
+            cbBuscarPor.CustomizableEdges = customizableEdges4;
+            cbBuscarPor.DrawMode = DrawMode.OwnerDrawFixed;
+            cbBuscarPor.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbBuscarPor.FocusedColor = Color.FromArgb(94, 148, 255);
+            cbBuscarPor.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cbBuscarPor.Font = new Font("Segoe UI", 10F);
+            cbBuscarPor.ForeColor = Color.FromArgb(68, 88, 112);
+            cbBuscarPor.ItemHeight = 30;
+            cbBuscarPor.Location = new Point(393, 67);
+            cbBuscarPor.Name = "cbBuscarPor";
+            cbBuscarPor.ShadowDecoration.CustomizableEdges = customizableEdges5;
+            cbBuscarPor.Size = new Size(140, 36);
+            cbBuscarPor.TabIndex = 1;
             // 
             // btnNuevoCliente
             // 
             btnNuevoCliente.BorderRadius = 8;
-            btnNuevoCliente.CustomizableEdges = customizableEdges5;
+            btnNuevoCliente.CustomizableEdges = customizableEdges6;
             btnNuevoCliente.DisabledState.BorderColor = Color.DarkGray;
             btnNuevoCliente.DisabledState.CustomBorderColor = Color.DarkGray;
             btnNuevoCliente.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -150,7 +168,7 @@
             btnNuevoCliente.ImageSize = new Size(25, 25);
             btnNuevoCliente.Location = new Point(15, 63);
             btnNuevoCliente.Name = "btnNuevoCliente";
-            btnNuevoCliente.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnNuevoCliente.ShadowDecoration.CustomizableEdges = customizableEdges7;
             btnNuevoCliente.Size = new Size(180, 45);
             btnNuevoCliente.TabIndex = 0;
             btnNuevoCliente.Text = "Nuevo Cliente";
@@ -163,7 +181,7 @@
             dgvClientes.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = Color.White;
             dgvClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dgvClientes.BackgroundColor = SystemColors.Window;
+            dgvClientes.BackgroundColor = SystemColors.ButtonFace;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
@@ -174,7 +192,7 @@
             dgvClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvClientes.ColumnHeadersHeight = 17;
             dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgvClientes.Columns.AddRange(new DataGridViewColumn[] { ColNombre, colTipoDoc, colDocumento, colCiudad, colCorreo, colTelefono, colEditar, colEliminar });
+            dgvClientes.Columns.AddRange(new DataGridViewColumn[] { ColIdCliente, ColNombre, ColCiudad, ColCorreo, ColTelefono });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
@@ -184,18 +202,18 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvClientes.DefaultCellStyle = dataGridViewCellStyle3;
             dgvClientes.GridColor = Color.FromArgb(231, 229, 255);
-            dgvClientes.Location = new Point(0, 119);
+            dgvClientes.Location = new Point(15, 114);
             dgvClientes.Name = "dgvClientes";
             dgvClientes.ReadOnly = true;
             dgvClientes.RowHeadersVisible = false;
-            dgvClientes.Size = new Size(951, 487);
+            dgvClientes.Size = new Size(925, 478);
             dgvClientes.TabIndex = 4;
             dgvClientes.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgvClientes.ThemeStyle.AlternatingRowsStyle.Font = null;
             dgvClientes.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
             dgvClientes.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
             dgvClientes.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
-            dgvClientes.ThemeStyle.BackColor = SystemColors.Window;
+            dgvClientes.ThemeStyle.BackColor = SystemColors.ButtonFace;
             dgvClientes.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
             dgvClientes.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
             dgvClientes.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -211,54 +229,42 @@
             dgvClientes.ThemeStyle.RowsStyle.Height = 25;
             dgvClientes.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgvClientes.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dgvClientes.CellContentClick += dgvClientes_CellContentClick;
+            // 
+            // ColIdCliente
+            // 
+            ColIdCliente.DataPropertyName = "IdCliente";
+            ColIdCliente.HeaderText = "ID";
+            ColIdCliente.Name = "ColIdCliente";
+            ColIdCliente.ReadOnly = true;
             // 
             // ColNombre
             // 
+            ColNombre.DataPropertyName = "Nombre";
             ColNombre.HeaderText = "Nombre";
             ColNombre.Name = "ColNombre";
             ColNombre.ReadOnly = true;
             // 
-            // colTipoDoc
+            // ColCiudad
             // 
-            colTipoDoc.HeaderText = "T. Documento";
-            colTipoDoc.Name = "colTipoDoc";
-            colTipoDoc.ReadOnly = true;
+            ColCiudad.DataPropertyName = "Ciudad";
+            ColCiudad.HeaderText = "Ciudad";
+            ColCiudad.Name = "ColCiudad";
+            ColCiudad.ReadOnly = true;
             // 
-            // colDocumento
+            // ColCorreo
             // 
-            colDocumento.HeaderText = "Documento";
-            colDocumento.Name = "colDocumento";
-            colDocumento.ReadOnly = true;
+            ColCorreo.DataPropertyName = "CorreoElectronico";
+            ColCorreo.HeaderText = "Correo";
+            ColCorreo.Name = "ColCorreo";
+            ColCorreo.ReadOnly = true;
             // 
-            // colCiudad
+            // ColTelefono
             // 
-            colCiudad.HeaderText = "Ciudad";
-            colCiudad.Name = "colCiudad";
-            colCiudad.ReadOnly = true;
-            // 
-            // colCorreo
-            // 
-            colCorreo.HeaderText = "Correo";
-            colCorreo.Name = "colCorreo";
-            colCorreo.ReadOnly = true;
-            // 
-            // colTelefono
-            // 
-            colTelefono.HeaderText = "Teléfono";
-            colTelefono.Name = "colTelefono";
-            colTelefono.ReadOnly = true;
-            // 
-            // colEditar
-            // 
-            colEditar.HeaderText = "✎";
-            colEditar.Name = "colEditar";
-            colEditar.ReadOnly = true;
-            // 
-            // colEliminar
-            // 
-            colEliminar.HeaderText = "🗑";
-            colEliminar.Name = "colEliminar";
-            colEliminar.ReadOnly = true;
+            ColTelefono.DataPropertyName = "Telefono";
+            ColTelefono.HeaderText = "Telefono";
+            ColTelefono.Name = "ColTelefono";
+            ColTelefono.ReadOnly = true;
             // 
             // UC_Clientes
             // 
@@ -279,16 +285,14 @@
         private Guna.UI2.WinForms.Guna2Panel panelTools;
         private Guna.UI2.WinForms.Guna2Button btnNuevoCliente;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
-        private Guna.UI2.WinForms.Guna2ComboBox cmbFiltro;
+        private Guna.UI2.WinForms.Guna2ComboBox cbBuscarPor;
         private Guna.UI2.WinForms.Guna2TextBox txtBuscar;
         private Guna.UI2.WinForms.Guna2DataGridView dgvClientes;
+        private Guna.UI2.WinForms.Guna2CircleButton btnBuscarCliente;
+        private DataGridViewTextBoxColumn ColIdCliente;
         private DataGridViewTextBoxColumn ColNombre;
-        private DataGridViewTextBoxColumn colTipoDoc;
-        private DataGridViewTextBoxColumn colDocumento;
-        private DataGridViewTextBoxColumn colCiudad;
-        private DataGridViewTextBoxColumn colCorreo;
-        private DataGridViewTextBoxColumn colTelefono;
-        private DataGridViewButtonColumn colEditar;
-        private DataGridViewButtonColumn colEliminar;
+        private DataGridViewTextBoxColumn ColCiudad;
+        private DataGridViewTextBoxColumn ColCorreo;
+        private DataGridViewTextBoxColumn ColTelefono;
     }
 }

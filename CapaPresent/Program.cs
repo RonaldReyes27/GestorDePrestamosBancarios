@@ -12,7 +12,7 @@ namespace CapaPresent
             Application.SetCompatibleTextRenderingDefault(false);
 
             // ARRANCAR SISTEMA DESDE EL MENU
-            Application.Run(new FrmMenu());
+            Application.Run(new FrmLogin());
         }
     }
 }

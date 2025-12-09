@@ -8,19 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CapaPresent
+namespace CapaPresent.UserControls
 {
-    public partial class FrmNuevoCliente : Form
+    public partial class UC_HistorialPrestamos : UserControl
     {
-        public FrmNuevoCliente()
+        public UC_HistorialPrestamos()
         {
             InitializeComponent();
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Cancel;
-            this.Close();
         }
     }
 }

@@ -86,7 +86,7 @@
             panelTop.Location = new Point(0, 0);
             panelTop.Name = "panelTop";
             panelTop.ShadowDecoration.CustomizableEdges = customizableEdges24;
-            panelTop.Size = new Size(1150, 80);
+            panelTop.Size = new Size(1286, 80);
             panelTop.TabIndex = 2;
             // 
             // pbLogo
@@ -131,7 +131,7 @@
             guna2ControlBoxClose.CustomizableEdges = customizableEdges19;
             guna2ControlBoxClose.FillColor = Color.FromArgb(139, 152, 166);
             guna2ControlBoxClose.IconColor = Color.White;
-            guna2ControlBoxClose.Location = new Point(1090, 15);
+            guna2ControlBoxClose.Location = new Point(1226, 15);
             guna2ControlBoxClose.Name = "guna2ControlBoxClose";
             guna2ControlBoxClose.ShadowDecoration.CustomizableEdges = customizableEdges20;
             guna2ControlBoxClose.Size = new Size(45, 29);
@@ -144,7 +144,7 @@
             guna2ControlBoxMin.CustomizableEdges = customizableEdges21;
             guna2ControlBoxMin.FillColor = Color.FromArgb(139, 152, 166);
             guna2ControlBoxMin.IconColor = Color.White;
-            guna2ControlBoxMin.Location = new Point(1045, 15);
+            guna2ControlBoxMin.Location = new Point(1181, 15);
             guna2ControlBoxMin.Name = "guna2ControlBoxMin";
             guna2ControlBoxMin.ShadowDecoration.CustomizableEdges = customizableEdges22;
             guna2ControlBoxMin.Size = new Size(45, 29);
@@ -184,7 +184,7 @@
             panelMenu.Location = new Point(0, 80);
             panelMenu.Name = "panelMenu";
             panelMenu.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            panelMenu.Size = new Size(222, 640);
+            panelMenu.Size = new Size(222, 804);
             panelMenu.TabIndex = 3;
             // 
             // btnInicio
@@ -268,6 +268,7 @@
             btnHistorial.TabIndex = 5;
             btnHistorial.Text = "Historial";
             btnHistorial.TextAlign = HorizontalAlignment.Left;
+            btnHistorial.Click += btnHistorial_Click;
             // 
             // btnCobrar
             // 
@@ -295,6 +296,7 @@
             btnCobrar.TabIndex = 5;
             btnCobrar.Text = "Cobrar";
             btnCobrar.TextAlign = HorizontalAlignment.Left;
+            btnCobrar.Click += btnCobrar_Click;
             // 
             // btnSolicitar
             // 
@@ -337,14 +339,14 @@
             PanelContenedor.Location = new Point(222, 80);
             PanelContenedor.Name = "PanelContenedor";
             PanelContenedor.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            PanelContenedor.Size = new Size(928, 640);
+            PanelContenedor.Size = new Size(1064, 801);
             PanelContenedor.TabIndex = 4;
             // 
             // FrmMenu
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.White;
-            ClientSize = new Size(1150, 720);
+            ClientSize = new Size(1286, 884);
             Controls.Add(PanelContenedor);
             Controls.Add(panelMenu);
             Controls.Add(panelTop);
