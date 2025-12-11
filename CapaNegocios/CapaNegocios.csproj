@@ -8,11 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="03ClasePrestamos\" />
-    <Folder Include="04ClaseCuotas\" />
-    <Folder Include="05ClasePago\" />
-    <Folder Include="06ClaseMora\" />
-    <Folder Include="Enum\" />
+    <Compile Remove="05ClasePago\**" />
+    <Compile Remove="06ClaseMora\**" />
+    <Compile Remove="Enum\**" />
+    <EmbeddedResource Remove="05ClasePago\**" />
+    <EmbeddedResource Remove="06ClaseMora\**" />
+    <EmbeddedResource Remove="Enum\**" />
+    <None Remove="05ClasePago\**" />
+    <None Remove="06ClaseMora\**" />
+    <None Remove="Enum\**" />
   </ItemGroup>
 
   <ItemGroup>

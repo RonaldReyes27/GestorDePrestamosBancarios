@@ -15,24 +15,77 @@ namespace CapaPresent.UserControls
             this.Load += UC_Clientes_Load;
         }
 
-        // ============================================
-        //      CARGAR TODOS LOS CLIENTES
-        // ============================================
-        private void CargarListaClientes()
+        // ============================================================
+        //      CONFIGURAR COLUMNAS DEL DATAGRIDVIEW POR CÓDIGO
+        // ============================================================
+        private void ConfigurarColumnas()
         {
-            DataTable dt = negocio.ListarClientes();
-            dgvClientes.AutoGenerateColumns = false; // NECESARIO
-            dgvClientes.DataSource = dt;
+            dgvClientes.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                Name = "ColId",
+                HeaderText = "ID",
+                DataPropertyName = "IdCliente"
+            });
+
+            dgvClientes.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                Name = "ColNombre",
+                HeaderText = "Nombre",
+                DataPropertyName = "Nombre"
+            });
+
+            dgvClientes.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                Name = "ColDocumento",
+                HeaderText = "Documento",
+                DataPropertyName = "Cedula"
+            });
+
+            dgvClientes.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                Name = "ColCiudad",
+                HeaderText = "Ciudad",
+                DataPropertyName = "Ciudad"
+            });
+
+            dgvClientes.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                Name = "ColCorreo",
+                HeaderText = "Correo",
+                DataPropertyName = "CorreoElectronico"
+            });
+
+            dgvClientes.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                Name = "ColTelefono",
+                HeaderText = "Teléfono",
+                DataPropertyName = "Telefono"
+            });
+
+            dgvClientes.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                Name = "ColDireccion",
+                HeaderText = "Dirección",
+                DataPropertyName = "Direccion"
+            });
         }
 
-        // ============================================
+        // ============================================================
+        //      CARGAR LISTA DE CLIENTES
+        // ============================================================
+        private void CargarListaClientes()
+        {
+            DataTable clientes = negocio.ListarClientes();
+            dgvClientes.DataSource = clientes;
+        }
+
+        // ============================================================
         //      LOAD DEL USERCONTROL
-        // ============================================
+        // ============================================================
         private void UC_Clientes_Load(object sender, EventArgs e)
         {
+            ConfigurarColumnas();   // ← MUY IMPORTANTE
             CargarListaClientes();
-
-            
 
             cbBuscarPor.Items.Clear();
             cbBuscarPor.Items.Add("Nombre");
@@ -41,9 +94,9 @@ namespace CapaPresent.UserControls
             cbBuscarPor.SelectedIndex = 0;
         }
 
-        // ============================================
-        //      ABRIR FORM NUEVO CLIENTE
-        // ============================================
+        // ============================================================
+        //      NUEVO CLIENTE
+        // ============================================================
         private void btnNuevoCliente_Click(object sender, EventArgs e)
         {
             using (FrmNuevoCliente frm = new FrmNuevoCliente())
@@ -55,9 +108,9 @@ namespace CapaPresent.UserControls
             }
         }
 
-        // ============================================
-        //      BOTÓN BUSCAR
-        // ============================================
+        // ============================================================
+        //      BUSCAR CLIENTE
+        // ============================================================
         private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
             if (txtBuscar.Text.Trim() == "")
@@ -66,28 +119,17 @@ namespace CapaPresent.UserControls
                 return;
             }
 
-            string columna = "";
-
-            switch (cbBuscarPor.SelectedItem.ToString())
+            string columna = cbBuscarPor.SelectedItem.ToString() switch
             {
-                case "Nombre":
-                    columna = "Nombre";
-                    break;
-
-                case "Documento":
-                    columna = "Cedula";  // ASAUME QUE GUARDAS CEDULA/PASAPORTE AQUÍ
-                    break;
-
-                case "Ciudad":
-                    columna = "Ciudad";
-                    break;
-            }
+                "Nombre" => "Nombre",
+                "Documento" => "Cedula",
+                "Ciudad" => "Ciudad",
+                _ => "Nombre"
+            };
 
             DataTable dt = negocio.Buscar(columna, txtBuscar.Text.Trim());
-
             dgvClientes.DataSource = dt;
 
-            // Seleccionar primera fila encontrada
             if (dt.Rows.Count > 0)
             {
                 dgvClientes.ClearSelection();
@@ -95,26 +137,21 @@ namespace CapaPresent.UserControls
             }
         }
 
-        
-
-        // ============================================
-        //     BUSCAR AUTOMÁTICO AL ESCRIBIR
-        // ============================================
+        // BUSCAR AUTOMÁTICO
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             btnBuscarCliente_Click(sender, e);
-
         }
 
-        // ============================================
-        //     CLICK EN CELDAS (EDITAR / ELIMINAR)
-        // ============================================
+        // ============================================================
+        //      EVENTOS DE CELDAS (EDITAR / ELIMINAR)
+        // ============================================================
         private void dgvClientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0)
                 return;
 
-            int id = Convert.ToInt32(dgvClientes.Rows[e.RowIndex].Cells["ColIdCliente"].Value);
+            int id = Convert.ToInt32(dgvClientes.Rows[e.RowIndex].Cells["ColId"].Value);
 
             // EDITAR
             if (e.ColumnIndex == dgvClientes.Columns["Editar"].Index)
@@ -130,24 +167,15 @@ namespace CapaPresent.UserControls
             // ELIMINAR
             if (e.ColumnIndex == dgvClientes.Columns["Eliminar"].Index)
             {
-                DialogResult r = MessageBox.Show(
-                    "¿Deseas eliminar este cliente?",
+                if (MessageBox.Show("¿Deseas eliminar este cliente?",
                     "Confirmación",
                     MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Warning
-                );
-
-                if (r == DialogResult.Yes)
+                    MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     negocio.EliminarCliente(id);
                     CargarListaClientes();
                 }
             }
-        }
-
-        private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

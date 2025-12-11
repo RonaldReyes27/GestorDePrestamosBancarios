@@ -6,15 +6,19 @@ namespace CapaPresent
 {
     public partial class FrmNuevoCliente : Form
     {
-        private int _idCliente = 0;  // 0 = Nuevo | >0 = Editar
+        private int _idCliente = 0; // 0 = Nuevo, >0 = Editar
 
-        // 🔹 Constructor para NUEVO cliente
+        // -------------------------------------------------------------
+        // CONSTRUCTOR → NUEVO CLIENTE
+        // -------------------------------------------------------------
         public FrmNuevoCliente()
         {
             InitializeComponent();
         }
 
-        // 🔹 Constructor para EDITAR cliente
+        // -------------------------------------------------------------
+        // CONSTRUCTOR → EDITAR CLIENTE
+        // -------------------------------------------------------------
         public FrmNuevoCliente(int idCliente)
         {
             InitializeComponent();
@@ -22,14 +26,18 @@ namespace CapaPresent
             CargarDatosCliente();
         }
 
-        // 🔹 Botón Cancelar
+        // -------------------------------------------------------------
+        // BOTÓN CANCELAR
+        // -------------------------------------------------------------
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
 
-        // 🔹 Cargar datos cuando es EDICIÓN
+        // -------------------------------------------------------------
+        // CARGAR DATOS PARA EDICIÓN
+        // -------------------------------------------------------------
         private void CargarDatosCliente()
         {
             ClienteNegocio negocio = new ClienteNegocio();
@@ -40,7 +48,7 @@ namespace CapaPresent
                 var row = dt.Rows[0];
 
                 txtNombre.Text = row["Nombre"].ToString();
-                cbTipoDocumento.Text = row["Documento"].ToString();
+                cbTipoDocumento.Text = row["TipoDocumento"].ToString(); // CORRECTO
                 txtDocumento.Text = row["Cedula"].ToString();
                 txtCiudad.Text = row["Ciudad"].ToString();
                 txtDireccion.Text = row["Direccion"].ToString();
@@ -49,10 +57,12 @@ namespace CapaPresent
             }
         }
 
-        // 🔹 Botón GUARDAR
+        // -------------------------------------------------------------
+        // BOTÓN GUARDAR
+        // -------------------------------------------------------------
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            // Validación
+            // Validación básica
             if (txtNombre.Text.Trim() == "" ||
                 cbTipoDocumento.SelectedIndex == -1 ||
                 txtDocumento.Text.Trim() == "")
@@ -64,35 +74,37 @@ namespace CapaPresent
             ClienteNegocio negocio = new ClienteNegocio();
             bool resultado = false;
 
+            // ---------------------------------------------------------
+            // NUEVO CLIENTE
+            // ---------------------------------------------------------
             if (_idCliente == 0)
             {
-                // ✔ Registrar cliente NUEVO
                 resultado = negocio.GuardarCliente(
                     txtNombre.Text.Trim(),
-                    cbTipoDocumento.Text,
-                    txtDocumento.Text.Trim(),
+                    txtDocumento.Text.Trim(),      // Cedula / Pasaporte (número)
                     txtCiudad.Text.Trim(),
-                    txtDireccion.Text.Trim(),
                     txtEmail.Text.Trim(),
                     txtTelefono.Text.Trim()
                 );
             }
+            // ---------------------------------------------------------
+            // EDITAR CLIENTE EXISTENTE
+            // ---------------------------------------------------------
             else
             {
-                // ✔ Actualizar cliente EXISTENTE
-                resultado = negocio.ActualizarCliente(
+                resultado = negocio.EditarCliente(
                     _idCliente,
                     txtNombre.Text.Trim(),
-                    cbTipoDocumento.Text,
                     txtDocumento.Text.Trim(),
                     txtCiudad.Text.Trim(),
-                    txtDireccion.Text.Trim(),
                     txtEmail.Text.Trim(),
                     txtTelefono.Text.Trim()
                 );
             }
 
-            // ✔ Respuesta
+            // ---------------------------------------------------------
+            // RESPUESTA
+            // ---------------------------------------------------------
             if (resultado)
             {
                 MessageBox.Show("Cliente guardado correctamente");

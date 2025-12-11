@@ -1,43 +1,66 @@
 ﻿using CapaDatos;
+using System.Data.SqlClient;
 using System.Data;
+
 
 namespace CapaNegocios
 {
     public class ClienteNegocio
     {
-        ClienteDatos datos = new ClienteDatos();
+        private readonly ClienteDatos datos = new ClienteDatos();
 
-        public bool GuardarCliente(string n, string tipo, string doc, string c, string dir, string cor, string t)
+        // ======================================================
+        // REGISTRAR CLIENTE
+        // ======================================================
+        public bool GuardarCliente(string nombre, string documento, string ciudad,
+                                   string correo, string telefono)
         {
-            return datos.GuardarCliente(n, tipo, doc, c, dir, cor, t);
+            return datos.GuardarCliente(nombre, documento, ciudad, correo, telefono);
         }
 
+        // ======================================================
+        // LISTAR CLIENTES
+        // ======================================================
         public DataTable ListarClientes()
         {
             return datos.ListarClientes();
         }
 
-        public DataTable Buscar(string columna, string valor)
+        // ======================================================
+        // BUSCAR CLIENTES
+        // ======================================================
+        public DataTable Buscar(string filtro, string valor)
         {
-            return datos.BuscarClientes(columna, valor);
+            // Aquí enviamos el filtro correcto a CapaDatos
+            return datos.BuscarClientes(filtro, valor);
         }
 
-        public bool EliminarCliente(int id)
+        // ======================================================
+        // ELIMINAR CLIENTE
+        // ======================================================
+        public bool EliminarCliente(int idCliente)
         {
-            return datos.EliminarCliente(id);
+            return datos.EliminarCliente(idCliente);
         }
 
-        public bool EditarCliente(int id, string n, string doc, string c, string cor, string t)
+        // ======================================================
+        // EDITAR CLIENTE
+        // ======================================================
+        public bool EditarCliente(int idCliente, string nombre, string documento,
+                                  string ciudad, string correo, string telefono)
         {
-            return datos.EditarCliente(id, n, doc, c, cor, t);
+            return datos.EditarCliente(idCliente, nombre, documento, ciudad, correo, telefono);
         }
-        public DataTable ObtenerClientePorId(int id)
+
+        // ======================================================
+        // OBTENER CLIENTE POR ID
+        // ======================================================
+        public DataTable ObtenerClientePorId(int idCliente)
         {
-            return datos.ObtenerClientePorId(id);
+            return datos.ObtenerClientePorId(idCliente);
         }
-        public bool ActualizarCliente(int idCliente, string nombre, string tipoDocumento, string documento, string ciudad, string direccion, string email, string telefono)
-        {
-            return datos.ActualizarCliente(idCliente, nombre, tipoDocumento, documento, ciudad, direccion, email, telefono);
-        }
+        
+
     }
+
 }

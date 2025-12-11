@@ -48,11 +48,6 @@
             cbBuscarPor = new Guna.UI2.WinForms.Guna2ComboBox();
             btnNuevoCliente = new Guna.UI2.WinForms.Guna2Button();
             dgvClientes = new Guna.UI2.WinForms.Guna2DataGridView();
-            ColIdCliente = new DataGridViewTextBoxColumn();
-            ColNombre = new DataGridViewTextBoxColumn();
-            ColCiudad = new DataGridViewTextBoxColumn();
-            ColCorreo = new DataGridViewTextBoxColumn();
-            ColTelefono = new DataGridViewTextBoxColumn();
             panelTools.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
             SuspendLayout();
@@ -192,7 +187,6 @@
             dgvClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvClientes.ColumnHeadersHeight = 17;
             dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgvClientes.Columns.AddRange(new DataGridViewColumn[] { ColIdCliente, ColNombre, ColCiudad, ColCorreo, ColTelefono });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
@@ -229,42 +223,7 @@
             dgvClientes.ThemeStyle.RowsStyle.Height = 25;
             dgvClientes.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgvClientes.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dgvClientes.CellContentClick += dgvClientes_CellContentClick;
-            // 
-            // ColIdCliente
-            // 
-            ColIdCliente.DataPropertyName = "IdCliente";
-            ColIdCliente.HeaderText = "ID";
-            ColIdCliente.Name = "ColIdCliente";
-            ColIdCliente.ReadOnly = true;
-            // 
-            // ColNombre
-            // 
-            ColNombre.DataPropertyName = "Nombre";
-            ColNombre.HeaderText = "Nombre";
-            ColNombre.Name = "ColNombre";
-            ColNombre.ReadOnly = true;
-            // 
-            // ColCiudad
-            // 
-            ColCiudad.DataPropertyName = "Ciudad";
-            ColCiudad.HeaderText = "Ciudad";
-            ColCiudad.Name = "ColCiudad";
-            ColCiudad.ReadOnly = true;
-            // 
-            // ColCorreo
-            // 
-            ColCorreo.DataPropertyName = "CorreoElectronico";
-            ColCorreo.HeaderText = "Correo";
-            ColCorreo.Name = "ColCorreo";
-            ColCorreo.ReadOnly = true;
-            // 
-            // ColTelefono
-            // 
-            ColTelefono.DataPropertyName = "Telefono";
-            ColTelefono.HeaderText = "Telefono";
-            ColTelefono.Name = "ColTelefono";
-            ColTelefono.ReadOnly = true;
+           // dgvClientes.CellContentClick += dgvClientes_CellContentClick;
             // 
             // UC_Clientes
             // 
@@ -289,10 +248,5 @@
         private Guna.UI2.WinForms.Guna2TextBox txtBuscar;
         private Guna.UI2.WinForms.Guna2DataGridView dgvClientes;
         private Guna.UI2.WinForms.Guna2CircleButton btnBuscarCliente;
-        private DataGridViewTextBoxColumn ColIdCliente;
-        private DataGridViewTextBoxColumn ColNombre;
-        private DataGridViewTextBoxColumn ColCiudad;
-        private DataGridViewTextBoxColumn ColCorreo;
-        private DataGridViewTextBoxColumn ColTelefono;
     }
 }
