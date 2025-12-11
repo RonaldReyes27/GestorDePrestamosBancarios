@@ -33,7 +33,7 @@ namespace CapaNegocios._04ClaseCuotas
         // ============================================================
         public DataTable ObtenerCuotasPorPrestamo(int idPrestamo)
         {
-            return datosCuota.ObtenerCuotasPorPrestamo(idPrestamo);
+            return datosCuota.ObtenerCuotasDePrestamo(idPrestamo);
         }
 
         // ============================================================

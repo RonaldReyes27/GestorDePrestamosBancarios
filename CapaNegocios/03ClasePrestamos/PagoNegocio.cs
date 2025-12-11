@@ -1,20 +1,19 @@
-﻿using System.Data;
-using CapaDatos;
+﻿using CapaDatos;
 
 namespace CapaNegocios
 {
     public class PagoNegocio
     {
-        private readonly PagoDatos datos = new PagoDatos();
+        PagoDatos datos = new PagoDatos();
 
         public bool RegistrarPago(int idPrestamo, int numeroCuota, decimal monto)
         {
             return datos.RegistrarPago(idPrestamo, numeroCuota, monto);
         }
-
-        public DataTable HistorialPagos(int idPrestamo)
+        public bool CuotaEstaPagada(int idPrestamo, int numeroCuota)
         {
-            return datos.ObtenerHistorialPagos(idPrestamo);
+            PagoDatos pagoDatos = new PagoDatos();
+            return pagoDatos.CuotaFuePagada(idPrestamo, numeroCuota);
         }
     }
 }

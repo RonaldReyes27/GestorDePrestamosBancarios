@@ -1,6 +1,7 @@
 ﻿using CapaNegocios._03ClasePrestamos;
 using CapaNegocios._04ClaseCuotas;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace CapaPresent.UserControls
@@ -12,12 +13,9 @@ namespace CapaPresent.UserControls
         public UcNuevoPrestamo()
         {
             InitializeComponent();
-            Load += UcNuevoPrestamo_Load; // Evento Load
+            Load += UcNuevoPrestamo_Load;
         }
 
-        // ============================================================
-        //                CARGAR DATOS INICIALES
-        // ============================================================
         private void UcNuevoPrestamo_Load(object sender, EventArgs e)
         {
             CargarCuotas();
@@ -56,7 +54,7 @@ namespace CapaPresent.UserControls
             cmbFormaPago.Items.Add("Quincenal");
             cmbFormaPago.Items.Add("Mensual");
 
-            cmbFormaPago.SelectedIndex = 3; // Mensual por defecto
+            cmbFormaPago.SelectedIndex = 3;
         }
 
         private void CargarTipoMoneda()
@@ -68,9 +66,6 @@ namespace CapaPresent.UserControls
             cmbTipoMoneda.SelectedIndex = 0;
         }
 
-        // ============================================================
-        //                 INTERÉS AUTOMÁTICO
-        // ============================================================
         private void cmbTipoPrestamo_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (cmbTipoPrestamo.SelectedItem.ToString())
@@ -82,13 +77,8 @@ namespace CapaPresent.UserControls
             }
         }
 
-        // ============================================================
-        //                BOTON GENERAR CUOTAS
-        // ============================================================
-
         private void btnGenerarCuotas_Click(object sender, EventArgs e)
         {
-            // Validaciones
             if (!decimal.TryParse(txtMontoPrestamo.Text, out decimal monto))
             {
                 MessageBox.Show("Monto inválido");
@@ -106,7 +96,6 @@ namespace CapaPresent.UserControls
 
             decimal tasaMensual = (tasaAnual / 100m) / 12m;
 
-            // Fórmula Cuota Fija (Sistema Francés)
             decimal cuota = (monto * tasaMensual) /
                 (1 - (decimal)Math.Pow((double)(1 + tasaMensual), -cuotas));
 
@@ -119,7 +108,6 @@ namespace CapaPresent.UserControls
 
             dtgvInfoCuotas.Rows.Clear();
 
-            // Generar lista de cuotas
             for (int i = 1; i <= cuotas; i++)
             {
                 fechaInicio = CalcularFechaProxima(fechaInicio, cmbFormaPago.SelectedItem.ToString());
@@ -131,10 +119,6 @@ namespace CapaPresent.UserControls
                 );
             }
         }
-
-        // ============================================================
-        //         FUNCIÓN PARA CALCULAR FECHA SEGÚN FORMA PAGO
-        // ============================================================
 
         private DateTime CalcularFechaProxima(DateTime fecha, string formaPago)
         {
@@ -148,21 +132,15 @@ namespace CapaPresent.UserControls
             }
         }
 
-        // ============================================================
-        //          BOTÓN SELECCIONAR CLIENTE (LO LLENARÁS LUEGO)
-        // ============================================================
-
         private void btnSeleccionCliente_Click(object sender, EventArgs e)
         {
             FrmSeleccionarCliente frm = new FrmSeleccionarCliente();
 
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                // Guardar ID del cliente
                 _idClienteSeleccionado = frm.IdClienteSeleccionado;
                 txtDocumento.Tag = frm.IdClienteSeleccionado;
 
-                // Llenar campos del formulario
                 txtNombreCompleto.Text = frm.NombreSeleccionado;
                 txtDocumento.Text = frm.DocumentoSeleccionado;
                 txtCiudad.Text = frm.CiudadSeleccionada;
@@ -175,7 +153,6 @@ namespace CapaPresent.UserControls
         {
             try
             {
-                // VALIDACIONES
                 if (txtDocumento.Tag == null)
                 {
                     MessageBox.Show("Debe seleccionar un cliente.");
@@ -204,21 +181,18 @@ namespace CapaPresent.UserControls
                 string tipoPrestamo = cmbTipoPrestamo.SelectedItem.ToString();
                 DateTime fechaInicio = dtpFechaInicioPrestamo.Value;
 
-                // CAPA NEGOCIO
                 PrestamoNegocio prestamoNeg = new PrestamoNegocio();
                 CuotaNegocio cuotaNeg = new CuotaNegocio();
 
-                // 1️⃣ Guardar PRÉSTAMO (CORREGIDO)
                 int idPrestamo = prestamoNeg.CrearPrestamo(
                     idCliente,
                     monto,
                     tasaAnual,
-                    cuotas,
+                    cuotas,            // ← ahora se llama PlazoMeses en BD
                     tipoPrestamo,
                     fechaInicio
                 );
 
-                // 2️⃣ CONVERTIR DGV → LISTA DE CUOTAS (CORREGIDO)
                 List<CuotaModelo> listaCuotas = new List<CuotaModelo>();
 
                 foreach (DataGridViewRow row in dtgvInfoCuotas.Rows)
@@ -233,7 +207,6 @@ namespace CapaPresent.UserControls
                     });
                 }
 
-                // 3️⃣ Guardar CUOTAS (CORREGIDO)
                 cuotaNeg.GuardarCuotas(idPrestamo, listaCuotas);
 
                 MessageBox.Show("Préstamo registrado con éxito.");

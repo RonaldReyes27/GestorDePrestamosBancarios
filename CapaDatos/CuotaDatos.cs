@@ -7,7 +7,7 @@ namespace CapaDatos
     public class CuotaDatos
     {
         // ============================================================
-        // GUARDAR CUOTA (YA EXISTÍA)
+        // GUARDAR CUOTA
         // ============================================================
         public void GuardarCuota(int idPrestamo, int numeroCuota, decimal capital,
                                  decimal interes, decimal montoCuota,
@@ -17,10 +17,10 @@ namespace CapaDatos
             {
                 cn.Open();
 
-                string query = @"INSERT INTO Cuota (IdPrestamo, NumeroCuota, Capital, Interes, 
-                                MontoCuota, BalanceRestante, FechaProgramada)
-                                VALUES (@IdPrestamo, @Numero, @Capital, @Interes,
-                                        @Monto, @Balance, @Fecha);";
+                string query = @"INSERT INTO Cuota 
+                                (IdPrestamo, NumeroCuota, Capital, Interes, MontoCuota, BalanceRestante, FechaProgramada)
+                                VALUES 
+                                (@IdPrestamo, @Numero, @Capital, @Interes, @Monto, @Balance, @Fecha);";
 
                 SqlCommand cmd = new SqlCommand(query, cn);
 
@@ -38,9 +38,9 @@ namespace CapaDatos
 
 
         // ============================================================
-        // OBTENER TODAS LAS CUOTAS DE UN PRÉSTAMO
+        // OBTENER TODAS LAS CUOTAS DE UN PRÉSTAMO (HISTORIAL)
         // ============================================================
-        public DataTable ObtenerCuotasPorPrestamo(int idPrestamo)
+        public DataTable ObtenerCuotasDePrestamo(int idPrestamo)
         {
             DataTable dt = new DataTable();
 
@@ -48,13 +48,14 @@ namespace CapaDatos
             {
                 cn.Open();
 
-                string query = @"SELECT *
-                                 FROM Cuota
-                                 WHERE IdPrestamo = @IdPrestamo
-                                 ORDER BY NumeroCuota ASC;";
+                string query = @"
+                SELECT NumeroCuota, Capital, Interes, MontoCuota, BalanceRestante, FechaProgramada
+                FROM Cuota
+                WHERE IdPrestamo = @Id
+                ORDER BY NumeroCuota ASC;";
 
                 SqlCommand cmd = new SqlCommand(query, cn);
-                cmd.Parameters.AddWithValue("@IdPrestamo", idPrestamo);
+                cmd.Parameters.AddWithValue("@Id", idPrestamo);
 
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dt);
@@ -65,7 +66,7 @@ namespace CapaDatos
 
 
         // ============================================================
-        // OBTENER PRÓXIMA CUOTA PENDIENTE (PRIMERA NO PAGADA)
+        // OBTENER PRÓXIMA CUOTA PENDIENTE
         // ============================================================
         public DataTable ObtenerCuotasPendientes(int idPrestamo)
         {
@@ -98,7 +99,7 @@ namespace CapaDatos
 
 
         // ============================================================
-        // REGISTRAR PAGO DE UNA CUOTA
+        // REGISTRAR UN PAGO
         // ============================================================
         public bool RegistrarPago(int idPrestamo, int numeroCuota, decimal montoPagado)
         {
@@ -106,8 +107,10 @@ namespace CapaDatos
             {
                 cn.Open();
 
-                string query = @"INSERT INTO Pago (IdPrestamo, NumeroCuotaPagada, MontoPagado)
-                                 VALUES (@IdPrestamo, @NumeroCuota, @Monto);";
+                string query = @"INSERT INTO Pago 
+                                (IdPrestamo, NumeroCuotaPagada, MontoPagado)
+                                VALUES 
+                                (@IdPrestamo, @NumeroCuota, @Monto);";
 
                 SqlCommand cmd = new SqlCommand(query, cn);
 

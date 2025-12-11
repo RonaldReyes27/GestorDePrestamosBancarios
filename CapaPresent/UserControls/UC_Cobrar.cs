@@ -23,9 +23,8 @@ namespace CapaPresent.UserControls
         private void btnSeleccionarCliente_Click(object sender, EventArgs e)
         {
             FrmSeleccionarCliente frm = new FrmSeleccionarCliente();
-            frm.ShowDialog();
 
-            if (frm.IdClienteSeleccionado > 0)
+            if (frm.ShowDialog() == DialogResult.OK)
             {
                 idClienteSeleccionado = frm.IdClienteSeleccionado;
 
@@ -35,7 +34,7 @@ namespace CapaPresent.UserControls
         }
 
         // ==========================================================
-        // CARGAR DATOS BÁSICOS DEL CLIENTE
+        // CARGAR DATOS DEL CLIENTE
         // ==========================================================
         private void CargarDatosCliente(int idCliente)
         {
@@ -66,33 +65,25 @@ namespace CapaPresent.UserControls
                 return;
             }
 
-            // Usamos el primer préstamo activo
-            idPrestamoSeleccionado = Convert.ToInt32(dt.Rows[0]["IdPrestamo"]);
+            DataRow p = dt.Rows[0]; // Usamos el primer préstamo
 
-            CargarInformacionPrestamo(idPrestamoSeleccionado);
+            txtMontoPrestamo.Text = p["Monto"].ToString();
+            txtInteres.Text = p["TasaAnual"].ToString();
+            txtNumCuotas.Text = p["PlazoMeses"].ToString();
+            txtTipoMoneda.Text = "RD$";
+
+            // Aquí cargamos como FORMA DE PAGO lo que el usuario registró (Diario, Mensual, etc.)
+            txtFormaPago.Text = p["TipoPrestamo"].ToString();
+
+            txtFechaInicio.Text = Convert.ToDateTime(p["FechaInicio"]).ToShortDateString();
+
+            idPrestamoSeleccionado = Convert.ToInt32(p["IdPrestamo"]);
+
             CargarProximaCuota(idPrestamoSeleccionado);
         }
 
         // ==========================================================
-        // CARGAR INFORMACIÓN GENERAL DEL PRÉSTAMO
-        // ==========================================================
-        private void CargarInformacionPrestamo(int idPrestamo)
-        {
-            PrestamoNegocio prestamoNeg = new PrestamoNegocio();
-            DataTable dt = prestamoNeg.ObtenerPrestamo(idPrestamo);
-
-            if (dt.Rows.Count == 0) return;
-
-            txtMontoPrestamo.Text = dt.Rows[0]["Monto"].ToString();
-            txtInteres.Text = dt.Rows[0]["TasaAnual"].ToString();
-            txtNumCuotas.Text = dt.Rows[0]["PlazoMeses"].ToString();
-            txtFechaInicio.Text = Convert.ToDateTime(dt.Rows[0]["FechaInicio"]).ToShortDateString();
-
-            txtTipoMoneda.Text = "RD$"; // Puedes cambiarlo luego si usas otra moneda
-        }
-
-        // ==========================================================
-        // CARGAR PRÓXIMA CUOTA PENDIENTE
+        // CARGAR PRÓXIMA CUOTA
         // ==========================================================
         private void CargarProximaCuota(int idPrestamo)
         {
@@ -101,18 +92,45 @@ namespace CapaPresent.UserControls
 
             if (cuotas.Rows.Count == 0)
             {
-                MessageBox.Show("Este préstamo está totalmente pagado.");
+                MessageBox.Show("Este préstamo está completamente pagado.");
                 return;
             }
 
-            // Tomamos la primera cuota pendiente
-            txtCuotaPagar.Text = cuotas.Rows[0]["NumeroCuota"].ToString();
-            txtFechaLimitePago.Text = Convert.ToDateTime(cuotas.Rows[0]["FechaProgramada"]).ToShortDateString();
-            txtImportePagar.Text = cuotas.Rows[0]["MontoCuota"].ToString();
+            DataRow c = cuotas.Rows[0];
+
+            // ➤ DATOS DE LA SIGUIENTE CUOTA A PAGAR
+            txtCuotaPagar.Text = c["NumeroCuota"].ToString();
+            txtFechaLimitePago.Text = Convert.ToDateTime(c["FechaProgramada"]).ToShortDateString();
+            txtImportePagar.Text = c["MontoCuota"].ToString();
+
+            // ➤ Monto por cuota (es el mismo para todas)
+            decimal montoCuota = Convert.ToDecimal(c["MontoCuota"]);
+            txtMontoPorCuotas.Text = montoCuota.ToString("N2");
+
+            // ======================================================
+            //   🔥 CÁLCULO CORRECTO DEL TOTAL DE INTERESES
+            // ======================================================
+            // Fórmula: (cuota * cantidadCuotas) – montoPrestamo
+            // Esto no requiere tener columna Interes en BD
+            // ======================================================
+
+            decimal montoPrestamo = Convert.ToDecimal(txtMontoPrestamo.Text);
+            int totalCuotas = Convert.ToInt32(txtNumCuotas.Text);
+
+            decimal totalIntereses = (montoCuota * totalCuotas) - montoPrestamo;
+
+            if (totalIntereses < 0)
+                totalIntereses = 0;
+
+            txtTotalInteres.Text = totalIntereses.ToString("N2");
+
+            // ➤ Total a pagar = Cuota * número de cuotas
+            decimal totalAPagar = montoCuota * totalCuotas;
+            txtTotalAPagar.Text = totalAPagar.ToString("N2");
         }
 
         // ==========================================================
-        // REGISTRAR EL COBRO (BOTÓN)
+        // REGISTRAR PAGO
         // ==========================================================
         private void btnRegistrarCobro_Click(object sender, EventArgs e)
         {
@@ -131,6 +149,8 @@ namespace CapaPresent.UserControls
             if (ok)
             {
                 MessageBox.Show("Pago registrado correctamente.", "Éxito");
+
+                // Recargar la siguiente cuota pendiente
                 CargarProximaCuota(idPrestamoSeleccionado);
             }
             else

@@ -150,7 +150,18 @@ namespace CapaDatos
         {
             using (SqlConnection con = Conexion.Conectar())
             {
-                string query = @"SELECT * FROM Cliente WHERE IdCliente = @id";
+                string query = @"
+            SELECT 
+                IdCliente,
+                Nombre,
+                Cedula,
+                TipoDocumento,
+                Direccion,
+                Ciudad,
+                CorreoElectronico,
+                Telefono
+            FROM Cliente
+            WHERE IdCliente = @id";
 
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@id", id);
