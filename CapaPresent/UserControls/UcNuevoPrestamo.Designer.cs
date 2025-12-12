@@ -42,6 +42,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -60,8 +62,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
@@ -135,9 +135,9 @@
             gbCliente.Controls.Add(txtNombreCompleto);
             gbCliente.Controls.Add(lblNombreCompleto);
             gbCliente.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            gbCliente.Location = new Point(124, 98);
+            gbCliente.Location = new Point(3, 98);
             gbCliente.Name = "gbCliente";
-            gbCliente.Size = new Size(803, 205);
+            gbCliente.Size = new Size(644, 205);
             gbCliente.TabIndex = 1;
             gbCliente.TabStop = false;
             gbCliente.Text = "Datos Clientes";
@@ -155,7 +155,7 @@
             btnSeleccionCliente.ForeColor = Color.White;
             btnSeleccionCliente.Image = Properties.Resources.buscar;
             btnSeleccionCliente.ImageAlign = HorizontalAlignment.Left;
-            btnSeleccionCliente.Location = new Point(534, 151);
+            btnSeleccionCliente.Location = new Point(445, 148);
             btnSeleccionCliente.Name = "btnSeleccionCliente";
             btnSeleccionCliente.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnSeleccionCliente.Size = new Size(192, 29);
@@ -175,7 +175,7 @@
             txtTelefono.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtTelefono.Font = new Font("Segoe UI", 9F);
             txtTelefono.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTelefono.Location = new Point(301, 151);
+            txtTelefono.Location = new Point(228, 148);
             txtTelefono.Name = "txtTelefono";
             txtTelefono.PlaceholderText = "";
             txtTelefono.SelectedText = "";
@@ -186,7 +186,7 @@
             // lblTelefono
             // 
             lblTelefono.BackColor = Color.Transparent;
-            lblTelefono.Location = new Point(301, 126);
+            lblTelefono.Location = new Point(228, 123);
             lblTelefono.Name = "lblTelefono";
             lblTelefono.Size = new Size(106, 17);
             lblTelefono.TabIndex = 12;
@@ -203,7 +203,7 @@
             txtCorreo.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtCorreo.Font = new Font("Segoe UI", 9F);
             txtCorreo.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtCorreo.Location = new Point(92, 151);
+            txtCorreo.Location = new Point(19, 148);
             txtCorreo.Name = "txtCorreo";
             txtCorreo.PlaceholderText = "";
             txtCorreo.SelectedText = "";
@@ -214,7 +214,7 @@
             // lblCorreo
             // 
             lblCorreo.BackColor = Color.Transparent;
-            lblCorreo.Location = new Point(92, 126);
+            lblCorreo.Location = new Point(19, 123);
             lblCorreo.Name = "lblCorreo";
             lblCorreo.Size = new Size(101, 17);
             lblCorreo.TabIndex = 10;
@@ -231,7 +231,7 @@
             txtCiudad.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtCiudad.Font = new Font("Segoe UI", 9F);
             txtCiudad.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtCiudad.Location = new Point(301, 70);
+            txtCiudad.Location = new Point(228, 67);
             txtCiudad.Name = "txtCiudad";
             txtCiudad.PlaceholderText = "";
             txtCiudad.SelectedText = "";
@@ -242,7 +242,7 @@
             // lblCiudad
             // 
             lblCiudad.BackColor = Color.Transparent;
-            lblCiudad.Location = new Point(301, 45);
+            lblCiudad.Location = new Point(228, 42);
             lblCiudad.Name = "lblCiudad";
             lblCiudad.Size = new Size(41, 17);
             lblCiudad.TabIndex = 8;
@@ -259,7 +259,7 @@
             txtDocumento.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtDocumento.Font = new Font("Segoe UI", 9F);
             txtDocumento.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtDocumento.Location = new Point(534, 70);
+            txtDocumento.Location = new Point(435, 67);
             txtDocumento.Name = "txtDocumento";
             txtDocumento.PlaceholderText = "";
             txtDocumento.SelectedText = "";
@@ -270,7 +270,7 @@
             // guna2HtmlLabel4
             // 
             guna2HtmlLabel4.BackColor = Color.Transparent;
-            guna2HtmlLabel4.Location = new Point(534, 45);
+            guna2HtmlLabel4.Location = new Point(435, 42);
             guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             guna2HtmlLabel4.Size = new Size(113, 17);
             guna2HtmlLabel4.TabIndex = 4;
@@ -287,7 +287,7 @@
             txtNombreCompleto.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtNombreCompleto.Font = new Font("Segoe UI", 9F);
             txtNombreCompleto.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtNombreCompleto.Location = new Point(92, 70);
+            txtNombreCompleto.Location = new Point(19, 67);
             txtNombreCompleto.Name = "txtNombreCompleto";
             txtNombreCompleto.PlaceholderText = "";
             txtNombreCompleto.SelectedText = "";
@@ -298,7 +298,7 @@
             // lblNombreCompleto
             // 
             lblNombreCompleto.BackColor = Color.Transparent;
-            lblNombreCompleto.Location = new Point(92, 45);
+            lblNombreCompleto.Location = new Point(19, 42);
             lblNombreCompleto.Name = "lblNombreCompleto";
             lblNombreCompleto.Size = new Size(109, 17);
             lblNombreCompleto.TabIndex = 0;
@@ -308,7 +308,6 @@
             // 
             gbDetallesPrestamo.Controls.Add(cmbNumCuotas);
             gbDetallesPrestamo.Controls.Add(lblNumCuotas);
-            gbDetallesPrestamo.Controls.Add(btnGenerarCuotas);
             gbDetallesPrestamo.Controls.Add(txtMontoPagar);
             gbDetallesPrestamo.Controls.Add(txtTotalInteres);
             gbDetallesPrestamo.Controls.Add(txtMontoCuota);
@@ -328,9 +327,9 @@
             gbDetallesPrestamo.Controls.Add(txtMontoPrestamo);
             gbDetallesPrestamo.Controls.Add(lblMontoPrestamo);
             gbDetallesPrestamo.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            gbDetallesPrestamo.Location = new Point(124, 309);
+            gbDetallesPrestamo.Location = new Point(33, 309);
             gbDetallesPrestamo.Name = "gbDetallesPrestamo";
-            gbDetallesPrestamo.Size = new Size(803, 253);
+            gbDetallesPrestamo.Size = new Size(586, 253);
             gbDetallesPrestamo.TabIndex = 2;
             gbDetallesPrestamo.TabStop = false;
             gbDetallesPrestamo.Text = "Detalles del prestamo";
@@ -346,7 +345,7 @@
             cmbNumCuotas.Font = new Font("Segoe UI", 10F);
             cmbNumCuotas.ForeColor = Color.FromArgb(68, 88, 112);
             cmbNumCuotas.ItemHeight = 30;
-            cmbNumCuotas.Location = new Point(595, 56);
+            cmbNumCuotas.Location = new Point(301, 132);
             cmbNumCuotas.Name = "cmbNumCuotas";
             cmbNumCuotas.ShadowDecoration.CustomizableEdges = customizableEdges14;
             cmbNumCuotas.Size = new Size(107, 36);
@@ -355,7 +354,7 @@
             // lblNumCuotas
             // 
             lblNumCuotas.BackColor = Color.Transparent;
-            lblNumCuotas.Location = new Point(595, 31);
+            lblNumCuotas.Location = new Point(301, 107);
             lblNumCuotas.Name = "lblNumCuotas";
             lblNumCuotas.Size = new Size(68, 17);
             lblNumCuotas.TabIndex = 34;
@@ -364,7 +363,7 @@
             // btnGenerarCuotas
             // 
             btnGenerarCuotas.BorderRadius = 8;
-            btnGenerarCuotas.CustomizableEdges = customizableEdges15;
+            btnGenerarCuotas.CustomizableEdges = customizableEdges33;
             btnGenerarCuotas.DisabledState.BorderColor = Color.DarkGray;
             btnGenerarCuotas.DisabledState.CustomBorderColor = Color.DarkGray;
             btnGenerarCuotas.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -375,9 +374,9 @@
             btnGenerarCuotas.Image = Properties.Resources.bolsa_dinero;
             btnGenerarCuotas.ImageAlign = HorizontalAlignment.Left;
             btnGenerarCuotas.ImageSize = new Size(30, 30);
-            btnGenerarCuotas.Location = new Point(595, 121);
+            btnGenerarCuotas.Location = new Point(867, 578);
             btnGenerarCuotas.Name = "btnGenerarCuotas";
-            btnGenerarCuotas.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            btnGenerarCuotas.ShadowDecoration.CustomizableEdges = customizableEdges34;
             btnGenerarCuotas.Size = new Size(150, 71);
             btnGenerarCuotas.TabIndex = 33;
             btnGenerarCuotas.Text = "General cuotas de prestamo";
@@ -386,7 +385,7 @@
             // 
             // txtMontoPagar
             // 
-            txtMontoPagar.CustomizableEdges = customizableEdges17;
+            txtMontoPagar.CustomizableEdges = customizableEdges15;
             txtMontoPagar.DefaultText = "";
             txtMontoPagar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtMontoPagar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -395,17 +394,17 @@
             txtMontoPagar.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtMontoPagar.Font = new Font("Segoe UI", 9F);
             txtMontoPagar.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtMontoPagar.Location = new Point(440, 215);
+            txtMontoPagar.Location = new Point(425, 213);
             txtMontoPagar.Name = "txtMontoPagar";
             txtMontoPagar.PlaceholderText = "";
             txtMontoPagar.SelectedText = "";
-            txtMontoPagar.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            txtMontoPagar.ShadowDecoration.CustomizableEdges = customizableEdges16;
             txtMontoPagar.Size = new Size(141, 29);
             txtMontoPagar.TabIndex = 31;
             // 
             // txtTotalInteres
             // 
-            txtTotalInteres.CustomizableEdges = customizableEdges19;
+            txtTotalInteres.CustomizableEdges = customizableEdges17;
             txtTotalInteres.DefaultText = "";
             txtTotalInteres.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtTotalInteres.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -418,13 +417,13 @@
             txtTotalInteres.Name = "txtTotalInteres";
             txtTotalInteres.PlaceholderText = "";
             txtTotalInteres.SelectedText = "";
-            txtTotalInteres.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            txtTotalInteres.ShadowDecoration.CustomizableEdges = customizableEdges18;
             txtTotalInteres.Size = new Size(164, 29);
             txtTotalInteres.TabIndex = 30;
             // 
             // txtMontoCuota
             // 
-            txtMontoCuota.CustomizableEdges = customizableEdges21;
+            txtMontoCuota.CustomizableEdges = customizableEdges19;
             txtMontoCuota.DefaultText = "";
             txtMontoCuota.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtMontoCuota.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -438,14 +437,14 @@
             txtMontoCuota.PlaceholderText = "";
             txtMontoCuota.ReadOnly = true;
             txtMontoCuota.SelectedText = "";
-            txtMontoCuota.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            txtMontoCuota.ShadowDecoration.CustomizableEdges = customizableEdges20;
             txtMontoCuota.Size = new Size(192, 31);
             txtMontoCuota.TabIndex = 29;
             // 
             // lblMontoPagar
             // 
             lblMontoPagar.BackColor = Color.Transparent;
-            lblMontoPagar.Location = new Point(440, 192);
+            lblMontoPagar.Location = new Point(425, 190);
             lblMontoPagar.Name = "lblMontoPagar";
             lblMontoPagar.Size = new Size(108, 17);
             lblMontoPagar.TabIndex = 28;
@@ -472,15 +471,15 @@
             // dtpFechaInicioPrestamo
             // 
             dtpFechaInicioPrestamo.Checked = true;
-            dtpFechaInicioPrestamo.CustomizableEdges = customizableEdges23;
+            dtpFechaInicioPrestamo.CustomizableEdges = customizableEdges21;
             dtpFechaInicioPrestamo.FillColor = Color.Silver;
             dtpFechaInicioPrestamo.Font = new Font("Segoe UI", 9F);
             dtpFechaInicioPrestamo.Format = DateTimePickerFormat.Short;
-            dtpFechaInicioPrestamo.Location = new Point(440, 132);
+            dtpFechaInicioPrestamo.Location = new Point(425, 132);
             dtpFechaInicioPrestamo.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             dtpFechaInicioPrestamo.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             dtpFechaInicioPrestamo.Name = "dtpFechaInicioPrestamo";
-            dtpFechaInicioPrestamo.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            dtpFechaInicioPrestamo.ShadowDecoration.CustomizableEdges = customizableEdges22;
             dtpFechaInicioPrestamo.Size = new Size(113, 36);
             dtpFechaInicioPrestamo.TabIndex = 25;
             dtpFechaInicioPrestamo.Value = new DateTime(2025, 12, 5, 1, 10, 26, 221);
@@ -488,7 +487,7 @@
             // guna2HtmlLabel14
             // 
             guna2HtmlLabel14.BackColor = Color.Transparent;
-            guna2HtmlLabel14.Location = new Point(440, 107);
+            guna2HtmlLabel14.Location = new Point(425, 107);
             guna2HtmlLabel14.Name = "guna2HtmlLabel14";
             guna2HtmlLabel14.Size = new Size(66, 17);
             guna2HtmlLabel14.TabIndex = 24;
@@ -497,7 +496,7 @@
             // cmbTipoMoneda
             // 
             cmbTipoMoneda.BackColor = Color.Transparent;
-            cmbTipoMoneda.CustomizableEdges = customizableEdges25;
+            cmbTipoMoneda.CustomizableEdges = customizableEdges23;
             cmbTipoMoneda.DrawMode = DrawMode.OwnerDrawFixed;
             cmbTipoMoneda.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbTipoMoneda.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -506,16 +505,16 @@
             cmbTipoMoneda.ForeColor = Color.FromArgb(68, 88, 112);
             cmbTipoMoneda.ItemHeight = 30;
             cmbTipoMoneda.Items.AddRange(new object[] { "Dop", "US" });
-            cmbTipoMoneda.Location = new Point(238, 132);
+            cmbTipoMoneda.Location = new Point(178, 132);
             cmbTipoMoneda.Name = "cmbTipoMoneda";
-            cmbTipoMoneda.ShadowDecoration.CustomizableEdges = customizableEdges26;
-            cmbTipoMoneda.Size = new Size(164, 36);
+            cmbTipoMoneda.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            cmbTipoMoneda.Size = new Size(104, 36);
             cmbTipoMoneda.TabIndex = 23;
             // 
             // lblTipoMoneda
             // 
             lblTipoMoneda.BackColor = Color.Transparent;
-            lblTipoMoneda.Location = new Point(238, 107);
+            lblTipoMoneda.Location = new Point(178, 107);
             lblTipoMoneda.Name = "lblTipoMoneda";
             lblTipoMoneda.Size = new Size(74, 17);
             lblTipoMoneda.TabIndex = 22;
@@ -524,7 +523,7 @@
             // cmbFormaPago
             // 
             cmbFormaPago.BackColor = Color.Transparent;
-            cmbFormaPago.CustomizableEdges = customizableEdges27;
+            cmbFormaPago.CustomizableEdges = customizableEdges25;
             cmbFormaPago.DrawMode = DrawMode.OwnerDrawFixed;
             cmbFormaPago.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbFormaPago.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -535,8 +534,8 @@
             cmbFormaPago.Items.AddRange(new object[] { "Diario", "Semanal", "Quincenal", "Mensual" });
             cmbFormaPago.Location = new Point(23, 132);
             cmbFormaPago.Name = "cmbFormaPago";
-            cmbFormaPago.ShadowDecoration.CustomizableEdges = customizableEdges28;
-            cmbFormaPago.Size = new Size(164, 36);
+            cmbFormaPago.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            cmbFormaPago.Size = new Size(134, 36);
             cmbFormaPago.TabIndex = 21;
             // 
             // lblFormaPago
@@ -550,7 +549,7 @@
             // 
             // txtInteres
             // 
-            txtInteres.CustomizableEdges = customizableEdges29;
+            txtInteres.CustomizableEdges = customizableEdges27;
             txtInteres.DefaultText = "";
             txtInteres.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtInteres.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -559,11 +558,11 @@
             txtInteres.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtInteres.Font = new Font("Segoe UI", 9F);
             txtInteres.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtInteres.Location = new Point(440, 56);
+            txtInteres.Location = new Point(425, 54);
             txtInteres.Name = "txtInteres";
             txtInteres.PlaceholderText = "";
             txtInteres.SelectedText = "";
-            txtInteres.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            txtInteres.ShadowDecoration.CustomizableEdges = customizableEdges28;
             txtInteres.Size = new Size(113, 34);
             txtInteres.TabIndex = 19;
             // 
@@ -571,7 +570,7 @@
             // 
             lblInteres.BackColor = Color.Transparent;
             lblInteres.ForeColor = Color.Red;
-            lblInteres.Location = new Point(440, 31);
+            lblInteres.Location = new Point(425, 29);
             lblInteres.Name = "lblInteres";
             lblInteres.Size = new Size(51, 17);
             lblInteres.TabIndex = 18;
@@ -589,7 +588,7 @@
             // cmbTipoPrestamo
             // 
             cmbTipoPrestamo.BackColor = Color.Transparent;
-            cmbTipoPrestamo.CustomizableEdges = customizableEdges31;
+            cmbTipoPrestamo.CustomizableEdges = customizableEdges29;
             cmbTipoPrestamo.DrawMode = DrawMode.OwnerDrawFixed;
             cmbTipoPrestamo.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbTipoPrestamo.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -600,13 +599,13 @@
             cmbTipoPrestamo.Items.AddRange(new object[] { "Presonal", "Vehiculo", "Hipoteca", "Empresarial" });
             cmbTipoPrestamo.Location = new Point(238, 54);
             cmbTipoPrestamo.Name = "cmbTipoPrestamo";
-            cmbTipoPrestamo.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            cmbTipoPrestamo.ShadowDecoration.CustomizableEdges = customizableEdges30;
             cmbTipoPrestamo.Size = new Size(164, 36);
             cmbTipoPrestamo.TabIndex = 16;
             // 
             // txtMontoPrestamo
             // 
-            txtMontoPrestamo.CustomizableEdges = customizableEdges33;
+            txtMontoPrestamo.CustomizableEdges = customizableEdges31;
             txtMontoPrestamo.DefaultText = "";
             txtMontoPrestamo.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtMontoPrestamo.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -619,7 +618,7 @@
             txtMontoPrestamo.Name = "txtMontoPrestamo";
             txtMontoPrestamo.PlaceholderText = "";
             txtMontoPrestamo.SelectedText = "";
-            txtMontoPrestamo.ShadowDecoration.CustomizableEdges = customizableEdges34;
+            txtMontoPrestamo.ShadowDecoration.CustomizableEdges = customizableEdges32;
             txtMontoPrestamo.Size = new Size(192, 36);
             txtMontoPrestamo.TabIndex = 15;
             // 
@@ -634,12 +633,11 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(btnRegistrarPrestamo);
             groupBox2.Controls.Add(dtgvInfoCuotas);
             groupBox2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            groupBox2.Location = new Point(67, 568);
+            groupBox2.Location = new Point(653, 98);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(931, 209);
+            groupBox2.Size = new Size(536, 464);
             groupBox2.TabIndex = 3;
             groupBox2.TabStop = false;
             groupBox2.Text = "Informacion de cuotas";
@@ -653,15 +651,15 @@
             btnRegistrarPrestamo.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnRegistrarPrestamo.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnRegistrarPrestamo.FillColor = Color.FromArgb(34, 197, 94);
-            btnRegistrarPrestamo.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnRegistrarPrestamo.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnRegistrarPrestamo.ForeColor = Color.White;
             btnRegistrarPrestamo.Image = Properties.Resources.prestamo;
             btnRegistrarPrestamo.ImageAlign = HorizontalAlignment.Left;
             btnRegistrarPrestamo.ImageSize = new Size(30, 30);
-            btnRegistrarPrestamo.Location = new Point(772, 66);
+            btnRegistrarPrestamo.Location = new Point(224, 578);
             btnRegistrarPrestamo.Name = "btnRegistrarPrestamo";
             btnRegistrarPrestamo.ShadowDecoration.CustomizableEdges = customizableEdges36;
-            btnRegistrarPrestamo.Size = new Size(153, 108);
+            btnRegistrarPrestamo.Size = new Size(178, 71);
             btnRegistrarPrestamo.TabIndex = 1;
             btnRegistrarPrestamo.Text = "Registrar Prestamo";
             btnRegistrarPrestamo.TextAlign = HorizontalAlignment.Left;
@@ -694,7 +692,7 @@
             dtgvInfoCuotas.Location = new Point(6, 24);
             dtgvInfoCuotas.Name = "dtgvInfoCuotas";
             dtgvInfoCuotas.RowHeadersVisible = false;
-            dtgvInfoCuotas.Size = new Size(760, 172);
+            dtgvInfoCuotas.Size = new Size(524, 429);
             dtgvInfoCuotas.TabIndex = 0;
             dtgvInfoCuotas.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dtgvInfoCuotas.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -738,10 +736,10 @@
             PanelHeader.Controls.Add(guna2HtmlLabel1);
             PanelHeader.CustomizableEdges = customizableEdges37;
             PanelHeader.FillColor = Color.FromArgb(244, 244, 249);
-            PanelHeader.Location = new Point(47, 0);
+            PanelHeader.Location = new Point(0, 0);
             PanelHeader.Name = "PanelHeader";
             PanelHeader.ShadowDecoration.CustomizableEdges = customizableEdges38;
-            PanelHeader.Size = new Size(945, 92);
+            PanelHeader.Size = new Size(1189, 92);
             PanelHeader.TabIndex = 0;
             // 
             // guna2HtmlLabel1
@@ -790,12 +788,14 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(btnRegistrarPrestamo);
             Controls.Add(groupBox2);
-            Controls.Add(gbDetallesPrestamo);
+            Controls.Add(btnGenerarCuotas);
             Controls.Add(gbCliente);
+            Controls.Add(gbDetallesPrestamo);
             Controls.Add(PanelHeader);
             Name = "UcNuevoPrestamo";
-            Size = new Size(1038, 784);
+            Size = new Size(1200, 670);
             gbCliente.ResumeLayout(false);
             gbCliente.PerformLayout();
             gbDetallesPrestamo.ResumeLayout(false);

@@ -63,10 +63,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             btnSeleccionCliente = new Guna.UI2.WinForms.Guna2Button();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -79,12 +75,8 @@
             guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             txtCiudad = new Guna.UI2.WinForms.Guna2TextBox();
             guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            txtDireccion = new Guna.UI2.WinForms.Guna2TextBox();
-            guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             txtNumDoc = new Guna.UI2.WinForms.Guna2TextBox();
             guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
-            guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             txtNombre = new Guna.UI2.WinForms.Guna2TextBox();
             guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             groupBox4 = new GroupBox();
@@ -122,7 +114,7 @@
             guna2Panel1.Location = new Point(12, 3);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2Panel1.Size = new Size(1067, 100);
+            guna2Panel1.Size = new Size(1085, 100);
             guna2Panel1.TabIndex = 0;
             // 
             // btnSeleccionCliente
@@ -161,9 +153,9 @@
             // 
             groupBox2.Controls.Add(dgvResumenCuotas);
             groupBox2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            groupBox2.Location = new Point(524, 136);
+            groupBox2.Location = new Point(524, 109);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(555, 577);
+            groupBox2.Size = new Size(573, 576);
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "Resumen cuotas";
@@ -191,10 +183,10 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvResumenCuotas.DefaultCellStyle = dataGridViewCellStyle3;
             dgvResumenCuotas.GridColor = Color.FromArgb(231, 229, 255);
-            dgvResumenCuotas.Location = new Point(10, 29);
+            dgvResumenCuotas.Location = new Point(10, 27);
             dgvResumenCuotas.Name = "dgvResumenCuotas";
             dgvResumenCuotas.RowHeadersVisible = false;
-            dgvResumenCuotas.Size = new Size(539, 525);
+            dgvResumenCuotas.Size = new Size(557, 543);
             dgvResumenCuotas.TabIndex = 0;
             dgvResumenCuotas.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgvResumenCuotas.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -217,6 +209,7 @@
             dgvResumenCuotas.ThemeStyle.RowsStyle.Height = 25;
             dgvResumenCuotas.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgvResumenCuotas.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            
             // 
             // groupBox3
             // 
@@ -226,16 +219,12 @@
             groupBox3.Controls.Add(guna2HtmlLabel8);
             groupBox3.Controls.Add(txtCiudad);
             groupBox3.Controls.Add(guna2HtmlLabel7);
-            groupBox3.Controls.Add(txtDireccion);
-            groupBox3.Controls.Add(guna2HtmlLabel6);
             groupBox3.Controls.Add(txtNumDoc);
             groupBox3.Controls.Add(guna2HtmlLabel5);
-            groupBox3.Controls.Add(guna2TextBox3);
-            groupBox3.Controls.Add(guna2HtmlLabel4);
             groupBox3.Controls.Add(txtNombre);
             groupBox3.Controls.Add(guna2HtmlLabel3);
             groupBox3.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            groupBox3.Location = new Point(11, 136);
+            groupBox3.Location = new Point(11, 109);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(507, 238);
             groupBox3.TabIndex = 2;
@@ -253,7 +242,7 @@
             txtTelefono.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtTelefono.Font = new Font("Segoe UI", 9F);
             txtTelefono.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTelefono.Location = new Point(6, 184);
+            txtTelefono.Location = new Point(181, 119);
             txtTelefono.Name = "txtTelefono";
             txtTelefono.PlaceholderText = "";
             txtTelefono.SelectedText = "";
@@ -264,11 +253,12 @@
             // guna2HtmlLabel9
             // 
             guna2HtmlLabel9.BackColor = Color.Transparent;
-            guna2HtmlLabel9.Location = new Point(6, 161);
+            guna2HtmlLabel9.Location = new Point(181, 96);
             guna2HtmlLabel9.Name = "guna2HtmlLabel9";
             guna2HtmlLabel9.Size = new Size(56, 17);
             guna2HtmlLabel9.TabIndex = 12;
             guna2HtmlLabel9.Text = "Telefono :";
+            guna2HtmlLabel9.Click += guna2HtmlLabel9_Click;
             // 
             // txtCorreo
             // 
@@ -281,7 +271,7 @@
             txtCorreo.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtCorreo.Font = new Font("Segoe UI", 9F);
             txtCorreo.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtCorreo.Location = new Point(322, 119);
+            txtCorreo.Location = new Point(8, 119);
             txtCorreo.Name = "txtCorreo";
             txtCorreo.PlaceholderText = "";
             txtCorreo.SelectedText = "";
@@ -292,7 +282,7 @@
             // guna2HtmlLabel8
             // 
             guna2HtmlLabel8.BackColor = Color.Transparent;
-            guna2HtmlLabel8.Location = new Point(322, 96);
+            guna2HtmlLabel8.Location = new Point(8, 96);
             guna2HtmlLabel8.Name = "guna2HtmlLabel8";
             guna2HtmlLabel8.Size = new Size(107, 17);
             guna2HtmlLabel8.TabIndex = 10;
@@ -309,7 +299,7 @@
             txtCiudad.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtCiudad.Font = new Font("Segoe UI", 9F);
             txtCiudad.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtCiudad.Location = new Point(212, 119);
+            txtCiudad.Location = new Point(384, 52);
             txtCiudad.Name = "txtCiudad";
             txtCiudad.PlaceholderText = "";
             txtCiudad.SelectedText = "";
@@ -320,43 +310,15 @@
             // guna2HtmlLabel7
             // 
             guna2HtmlLabel7.BackColor = Color.Transparent;
-            guna2HtmlLabel7.Location = new Point(212, 96);
+            guna2HtmlLabel7.Location = new Point(384, 29);
             guna2HtmlLabel7.Name = "guna2HtmlLabel7";
             guna2HtmlLabel7.Size = new Size(47, 17);
             guna2HtmlLabel7.TabIndex = 8;
             guna2HtmlLabel7.Text = "Ciudad :";
             // 
-            // txtDireccion
-            // 
-            txtDireccion.CustomizableEdges = customizableEdges11;
-            txtDireccion.DefaultText = "";
-            txtDireccion.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtDireccion.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtDireccion.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtDireccion.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtDireccion.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtDireccion.Font = new Font("Segoe UI", 9F);
-            txtDireccion.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtDireccion.Location = new Point(6, 119);
-            txtDireccion.Name = "txtDireccion";
-            txtDireccion.PlaceholderText = "";
-            txtDireccion.SelectedText = "";
-            txtDireccion.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            txtDireccion.Size = new Size(200, 36);
-            txtDireccion.TabIndex = 7;
-            // 
-            // guna2HtmlLabel6
-            // 
-            guna2HtmlLabel6.BackColor = Color.Transparent;
-            guna2HtmlLabel6.Location = new Point(6, 96);
-            guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            guna2HtmlLabel6.Size = new Size(59, 17);
-            guna2HtmlLabel6.TabIndex = 6;
-            guna2HtmlLabel6.Text = "Direccion :";
-            // 
             // txtNumDoc
             // 
-            txtNumDoc.CustomizableEdges = customizableEdges13;
+            txtNumDoc.CustomizableEdges = customizableEdges11;
             txtNumDoc.DefaultText = "";
             txtNumDoc.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtNumDoc.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -365,54 +327,26 @@
             txtNumDoc.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtNumDoc.Font = new Font("Segoe UI", 9F);
             txtNumDoc.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtNumDoc.Location = new Point(322, 54);
+            txtNumDoc.Location = new Point(213, 54);
             txtNumDoc.Name = "txtNumDoc";
             txtNumDoc.PlaceholderText = "";
             txtNumDoc.SelectedText = "";
-            txtNumDoc.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            txtNumDoc.ShadowDecoration.CustomizableEdges = customizableEdges12;
             txtNumDoc.Size = new Size(165, 36);
             txtNumDoc.TabIndex = 5;
             // 
             // guna2HtmlLabel5
             // 
             guna2HtmlLabel5.BackColor = Color.Transparent;
-            guna2HtmlLabel5.Location = new Point(322, 29);
+            guna2HtmlLabel5.Location = new Point(213, 29);
             guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             guna2HtmlLabel5.Size = new Size(60, 17);
             guna2HtmlLabel5.TabIndex = 4;
             guna2HtmlLabel5.Text = "Num Doc :";
             // 
-            // guna2TextBox3
-            // 
-            guna2TextBox3.CustomizableEdges = customizableEdges15;
-            guna2TextBox3.DefaultText = "";
-            guna2TextBox3.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBox3.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBox3.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox3.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox3.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox3.Font = new Font("Segoe UI", 9F);
-            guna2TextBox3.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox3.Location = new Point(212, 54);
-            guna2TextBox3.Name = "guna2TextBox3";
-            guna2TextBox3.PlaceholderText = "";
-            guna2TextBox3.SelectedText = "";
-            guna2TextBox3.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            guna2TextBox3.Size = new Size(104, 36);
-            guna2TextBox3.TabIndex = 3;
-            // 
-            // guna2HtmlLabel4
-            // 
-            guna2HtmlLabel4.BackColor = Color.Transparent;
-            guna2HtmlLabel4.Location = new Point(212, 29);
-            guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            guna2HtmlLabel4.Size = new Size(57, 17);
-            guna2HtmlLabel4.TabIndex = 2;
-            guna2HtmlLabel4.Text = "Tipo Doc :";
-            // 
             // txtNombre
             // 
-            txtNombre.CustomizableEdges = customizableEdges17;
+            txtNombre.CustomizableEdges = customizableEdges13;
             txtNombre.DefaultText = "";
             txtNombre.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtNombre.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -425,7 +359,7 @@
             txtNombre.Name = "txtNombre";
             txtNombre.PlaceholderText = "";
             txtNombre.SelectedText = "";
-            txtNombre.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            txtNombre.ShadowDecoration.CustomizableEdges = customizableEdges14;
             txtNombre.Size = new Size(200, 36);
             txtNombre.TabIndex = 1;
             // 
@@ -459,16 +393,16 @@
             groupBox4.Controls.Add(guna2HtmlLabel11);
             groupBox4.Controls.Add(guna2HtmlLabel10);
             groupBox4.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            groupBox4.Location = new Point(11, 396);
+            groupBox4.Location = new Point(12, 368);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(507, 317);
+            groupBox4.Size = new Size(506, 317);
             groupBox4.TabIndex = 3;
             groupBox4.TabStop = false;
             groupBox4.Text = "Informacion de Prestamo";
             // 
             // txtTotalAPagar
             // 
-            txtTotalAPagar.CustomizableEdges = customizableEdges19;
+            txtTotalAPagar.CustomizableEdges = customizableEdges15;
             txtTotalAPagar.DefaultText = "";
             txtTotalAPagar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtTotalAPagar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -481,7 +415,7 @@
             txtTotalAPagar.Name = "txtTotalAPagar";
             txtTotalAPagar.PlaceholderText = "";
             txtTotalAPagar.SelectedText = "";
-            txtTotalAPagar.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            txtTotalAPagar.ShadowDecoration.CustomizableEdges = customizableEdges16;
             txtTotalAPagar.Size = new Size(140, 36);
             txtTotalAPagar.TabIndex = 33;
             // 
@@ -496,7 +430,7 @@
             // 
             // txtTotalInteres
             // 
-            txtTotalInteres.CustomizableEdges = customizableEdges21;
+            txtTotalInteres.CustomizableEdges = customizableEdges17;
             txtTotalInteres.DefaultText = "";
             txtTotalInteres.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtTotalInteres.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -509,7 +443,7 @@
             txtTotalInteres.Name = "txtTotalInteres";
             txtTotalInteres.PlaceholderText = "";
             txtTotalInteres.SelectedText = "";
-            txtTotalInteres.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            txtTotalInteres.ShadowDecoration.CustomizableEdges = customizableEdges18;
             txtTotalInteres.Size = new Size(161, 36);
             txtTotalInteres.TabIndex = 31;
             // 
@@ -524,7 +458,7 @@
             // 
             // txtMontoPorCuotas
             // 
-            txtMontoPorCuotas.CustomizableEdges = customizableEdges23;
+            txtMontoPorCuotas.CustomizableEdges = customizableEdges19;
             txtMontoPorCuotas.DefaultText = "";
             txtMontoPorCuotas.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtMontoPorCuotas.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -537,7 +471,7 @@
             txtMontoPorCuotas.Name = "txtMontoPorCuotas";
             txtMontoPorCuotas.PlaceholderText = "";
             txtMontoPorCuotas.SelectedText = "";
-            txtMontoPorCuotas.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            txtMontoPorCuotas.ShadowDecoration.CustomizableEdges = customizableEdges20;
             txtMontoPorCuotas.Size = new Size(161, 36);
             txtMontoPorCuotas.TabIndex = 29;
             // 
@@ -552,7 +486,7 @@
             // 
             // txtFechaInicio
             // 
-            txtFechaInicio.CustomizableEdges = customizableEdges25;
+            txtFechaInicio.CustomizableEdges = customizableEdges21;
             txtFechaInicio.DefaultText = "";
             txtFechaInicio.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtFechaInicio.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -565,7 +499,7 @@
             txtFechaInicio.Name = "txtFechaInicio";
             txtFechaInicio.PlaceholderText = "";
             txtFechaInicio.SelectedText = "";
-            txtFechaInicio.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            txtFechaInicio.ShadowDecoration.CustomizableEdges = customizableEdges22;
             txtFechaInicio.Size = new Size(127, 36);
             txtFechaInicio.TabIndex = 27;
             // 
@@ -580,7 +514,7 @@
             // 
             // txtTipoMoneda
             // 
-            txtTipoMoneda.CustomizableEdges = customizableEdges27;
+            txtTipoMoneda.CustomizableEdges = customizableEdges23;
             txtTipoMoneda.DefaultText = "";
             txtTipoMoneda.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtTipoMoneda.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -593,7 +527,7 @@
             txtTipoMoneda.Name = "txtTipoMoneda";
             txtTipoMoneda.PlaceholderText = "";
             txtTipoMoneda.SelectedText = "";
-            txtTipoMoneda.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            txtTipoMoneda.ShadowDecoration.CustomizableEdges = customizableEdges24;
             txtTipoMoneda.Size = new Size(107, 36);
             txtTipoMoneda.TabIndex = 25;
             // 
@@ -608,7 +542,7 @@
             // 
             // txtFormaPago
             // 
-            txtFormaPago.CustomizableEdges = customizableEdges29;
+            txtFormaPago.CustomizableEdges = customizableEdges25;
             txtFormaPago.DefaultText = "";
             txtFormaPago.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtFormaPago.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -621,7 +555,7 @@
             txtFormaPago.Name = "txtFormaPago";
             txtFormaPago.PlaceholderText = "";
             txtFormaPago.SelectedText = "";
-            txtFormaPago.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            txtFormaPago.ShadowDecoration.CustomizableEdges = customizableEdges26;
             txtFormaPago.Size = new Size(161, 36);
             txtFormaPago.TabIndex = 23;
             // 
@@ -636,7 +570,7 @@
             // 
             // txtNumCuotas
             // 
-            txtNumCuotas.CustomizableEdges = customizableEdges31;
+            txtNumCuotas.CustomizableEdges = customizableEdges27;
             txtNumCuotas.DefaultText = "";
             txtNumCuotas.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtNumCuotas.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -649,13 +583,13 @@
             txtNumCuotas.Name = "txtNumCuotas";
             txtNumCuotas.PlaceholderText = "";
             txtNumCuotas.SelectedText = "";
-            txtNumCuotas.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            txtNumCuotas.ShadowDecoration.CustomizableEdges = customizableEdges28;
             txtNumCuotas.Size = new Size(88, 36);
             txtNumCuotas.TabIndex = 14;
             // 
             // txtInteres
             // 
-            txtInteres.CustomizableEdges = customizableEdges33;
+            txtInteres.CustomizableEdges = customizableEdges29;
             txtInteres.DefaultText = "";
             txtInteres.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtInteres.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -668,7 +602,7 @@
             txtInteres.Name = "txtInteres";
             txtInteres.PlaceholderText = "";
             txtInteres.SelectedText = "";
-            txtInteres.ShadowDecoration.CustomizableEdges = customizableEdges34;
+            txtInteres.ShadowDecoration.CustomizableEdges = customizableEdges30;
             txtInteres.Size = new Size(113, 34);
             txtInteres.TabIndex = 21;
             // 
@@ -684,7 +618,7 @@
             // 
             // txtMontoPrestamo
             // 
-            txtMontoPrestamo.CustomizableEdges = customizableEdges35;
+            txtMontoPrestamo.CustomizableEdges = customizableEdges31;
             txtMontoPrestamo.DefaultText = "";
             txtMontoPrestamo.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtMontoPrestamo.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -697,7 +631,7 @@
             txtMontoPrestamo.Name = "txtMontoPrestamo";
             txtMontoPrestamo.PlaceholderText = "";
             txtMontoPrestamo.SelectedText = "";
-            txtMontoPrestamo.ShadowDecoration.CustomizableEdges = customizableEdges36;
+            txtMontoPrestamo.ShadowDecoration.CustomizableEdges = customizableEdges32;
             txtMontoPrestamo.Size = new Size(200, 36);
             txtMontoPrestamo.TabIndex = 14;
             // 
@@ -728,7 +662,7 @@
             Controls.Add(groupBox2);
             Controls.Add(guna2Panel1);
             Name = "UC_HistorialPrestamos";
-            Size = new Size(1089, 745);
+            Size = new Size(1106, 699);
             guna2Panel1.ResumeLayout(false);
             guna2Panel1.PerformLayout();
             groupBox2.ResumeLayout(false);
@@ -754,12 +688,8 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
         private Guna.UI2.WinForms.Guna2TextBox txtCiudad;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
-        private Guna.UI2.WinForms.Guna2TextBox txtDireccion;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
         private Guna.UI2.WinForms.Guna2TextBox txtNumDoc;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
         private Guna.UI2.WinForms.Guna2TextBox txtNombre;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;

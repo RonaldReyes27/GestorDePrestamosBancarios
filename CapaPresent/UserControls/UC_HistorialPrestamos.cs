@@ -17,6 +17,19 @@ namespace CapaPresent.UserControls
         {
             InitializeComponent();
             CrearColumnasCuotas();   // ← SE CREA SIEMPRE (soluciona error)
+            FixDataGridHeader();
+        }
+        private void FixDataGridHeader()
+        {
+            dgvResumenCuotas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvResumenCuotas.ColumnHeadersHeight = 32;
+            dgvResumenCuotas.ScrollBars = ScrollBars.Vertical;
+
+            // Evita que la cabecera se esconda al cambiar el layout
+            dgvResumenCuotas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+
+            // FORZAR RELOCATION
+            dgvResumenCuotas.Location = new Point(0, dgvResumenCuotas.Location.Y + 1);
         }
 
         // ===============================================================
@@ -71,7 +84,7 @@ namespace CapaPresent.UserControls
 
             txtNombre.Text = c["Nombre"].ToString();
             txtNumDoc.Text = c["Cedula"].ToString();
-            txtDireccion.Text = c["Direccion"].ToString();
+            //txtDireccion.Text = c["Direccion"].ToString();
             txtCiudad.Text = c["Ciudad"].ToString();
             txtCorreo.Text = c["CorreoElectronico"].ToString();
             txtTelefono.Text = c["Telefono"].ToString();
@@ -115,33 +128,64 @@ namespace CapaPresent.UserControls
             CuotaNegocio cuotaNeg = new CuotaNegocio();
             DataTable dt = cuotaNeg.ObtenerCuotasPorPrestamo(idPrestamo);
 
+            if (dt.Rows.Count == 0)
+                return;
+
+            // ============================================
+            // Datos generales del préstamo
+            // ============================================
+            decimal montoPrestamo = Convert.ToDecimal(txtMontoPrestamo.Text);
+            decimal tasaAnual = Convert.ToDecimal(txtInteres.Text);
+            int numCuotas = Convert.ToInt32(txtNumCuotas.Text);
+
+            decimal tasaMensual = tasaAnual / 100m / 12m;
+
+            decimal saldo = montoPrestamo;
+
             decimal totalInteres = 0;
             decimal totalAPagar = 0;
 
             foreach (DataRow c in dt.Rows)
             {
+                int numeroCuota = Convert.ToInt32(c["NumeroCuota"]);
+                decimal montoCuota = Convert.ToDecimal(c["MontoCuota"]);
+
+                // ============================================
+                // Calcular interés REAL de la cuota
+                // ============================================
+                decimal interesCuota = saldo * tasaMensual;
+                decimal capitalCuota = montoCuota - interesCuota;
+
+                if (capitalCuota < 0)
+                    capitalCuota = 0;
+
+                // Disminuir el saldo para la siguiente cuota
+                saldo -= capitalCuota;
+                if (saldo < 0) saldo = 0;
+
+                // Verificar si la cuota está pagada
                 PagoNegocio pagoNeg = new PagoNegocio();
-                bool pagada = pagoNeg.CuotaEstaPagada(idPrestamo, Convert.ToInt32(c["NumeroCuota"]));
-
-                decimal monto = Convert.ToDecimal(c["MontoCuota"]);
-                decimal interes = Convert.ToDecimal(c["Interes"]);
-
-                totalInteres += interes;
-                totalAPagar += monto;
+                bool pagada = pagoNeg.CuotaEstaPagada(idPrestamo, numeroCuota);
 
                 int row = dgvResumenCuotas.Rows.Add(
-                    c["NumeroCuota"],
+                    numeroCuota,
                     Convert.ToDateTime(c["FechaProgramada"]).ToShortDateString(),
-                    monto.ToString("N2"),
-                    interes.ToString("N2"),
+                    montoCuota.ToString("N2"),
+                    interesCuota.ToString("N2"),  // <--- AHORA MUESTRA EL INTERÉS REAL
                     pagada ? "Pagada" : "Pendiente"
                 );
 
                 dgvResumenCuotas.Rows[row].DefaultCellStyle.BackColor =
                     pagada ? Color.LightGreen : Color.LightYellow;
+
+                // Totales
+                totalInteres += interesCuota;
+                totalAPagar += montoCuota;
             }
 
-            // Asignación de totales
+            // ============================================
+            // Mostrar totales
+            // ============================================
             txtMontoPorCuotas.Text = dt.Rows.Count > 0
                 ? Convert.ToDecimal(dt.Rows[0]["MontoCuota"]).ToString("N2")
                 : "0.00";
@@ -149,5 +193,12 @@ namespace CapaPresent.UserControls
             txtTotalInteres.Text = totalInteres.ToString("N2");
             txtTotalAPagar.Text = totalAPagar.ToString("N2");
         }
+
+        private void guna2HtmlLabel9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }

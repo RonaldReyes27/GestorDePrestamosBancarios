@@ -184,7 +184,7 @@
             panelMenu.Location = new Point(0, 80);
             panelMenu.Name = "panelMenu";
             panelMenu.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            panelMenu.Size = new Size(222, 804);
+            panelMenu.Size = new Size(222, 722);
             panelMenu.TabIndex = 3;
             // 
             // btnInicio
@@ -339,14 +339,14 @@
             PanelContenedor.Location = new Point(222, 80);
             PanelContenedor.Name = "PanelContenedor";
             PanelContenedor.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            PanelContenedor.Size = new Size(1064, 801);
+            PanelContenedor.Size = new Size(1061, 722);
             PanelContenedor.TabIndex = 4;
             // 
             // FrmMenu
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.White;
-            ClientSize = new Size(1286, 884);
+            ClientSize = new Size(1286, 802);
             Controls.Add(PanelContenedor);
             Controls.Add(panelMenu);
             Controls.Add(panelTop);
