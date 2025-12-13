@@ -42,8 +42,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -62,11 +60,13 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             gbCliente = new GroupBox();
@@ -84,7 +84,6 @@
             gbDetallesPrestamo = new GroupBox();
             cmbNumCuotas = new Guna.UI2.WinForms.Guna2ComboBox();
             lblNumCuotas = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            btnGenerarCuotas = new Guna.UI2.WinForms.Guna2Button();
             txtMontoPagar = new Guna.UI2.WinForms.Guna2TextBox();
             txtTotalInteres = new Guna.UI2.WinForms.Guna2TextBox();
             txtMontoCuota = new Guna.UI2.WinForms.Guna2TextBox();
@@ -103,12 +102,13 @@
             cmbTipoPrestamo = new Guna.UI2.WinForms.Guna2ComboBox();
             txtMontoPrestamo = new Guna.UI2.WinForms.Guna2TextBox();
             lblMontoPrestamo = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            btnGenerarCuotas = new Guna.UI2.WinForms.Guna2Button();
             groupBox2 = new GroupBox();
-            btnRegistrarPrestamo = new Guna.UI2.WinForms.Guna2Button();
             dtgvInfoCuotas = new Guna.UI2.WinForms.Guna2DataGridView();
             ColCuotaNumero = new DataGridViewTextBoxColumn();
             ColFechaCobro = new DataGridViewTextBoxColumn();
             ColMontoCuota = new DataGridViewTextBoxColumn();
+            btnRegistrarPrestamo = new Guna.UI2.WinForms.Guna2Button();
             PanelHeader = new Guna.UI2.WinForms.Guna2Panel();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblTituloModulo = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -178,6 +178,7 @@
             txtTelefono.Location = new Point(228, 148);
             txtTelefono.Name = "txtTelefono";
             txtTelefono.PlaceholderText = "";
+            txtTelefono.ReadOnly = true;
             txtTelefono.SelectedText = "";
             txtTelefono.ShadowDecoration.CustomizableEdges = customizableEdges4;
             txtTelefono.Size = new Size(192, 29);
@@ -206,6 +207,7 @@
             txtCorreo.Location = new Point(19, 148);
             txtCorreo.Name = "txtCorreo";
             txtCorreo.PlaceholderText = "";
+            txtCorreo.ReadOnly = true;
             txtCorreo.SelectedText = "";
             txtCorreo.ShadowDecoration.CustomizableEdges = customizableEdges6;
             txtCorreo.Size = new Size(192, 29);
@@ -234,6 +236,7 @@
             txtCiudad.Location = new Point(228, 67);
             txtCiudad.Name = "txtCiudad";
             txtCiudad.PlaceholderText = "";
+            txtCiudad.ReadOnly = true;
             txtCiudad.SelectedText = "";
             txtCiudad.ShadowDecoration.CustomizableEdges = customizableEdges8;
             txtCiudad.Size = new Size(192, 29);
@@ -262,6 +265,7 @@
             txtDocumento.Location = new Point(435, 67);
             txtDocumento.Name = "txtDocumento";
             txtDocumento.PlaceholderText = "";
+            txtDocumento.ReadOnly = true;
             txtDocumento.SelectedText = "";
             txtDocumento.ShadowDecoration.CustomizableEdges = customizableEdges10;
             txtDocumento.Size = new Size(192, 29);
@@ -290,6 +294,7 @@
             txtNombreCompleto.Location = new Point(19, 67);
             txtNombreCompleto.Name = "txtNombreCompleto";
             txtNombreCompleto.PlaceholderText = "";
+            txtNombreCompleto.ReadOnly = true;
             txtNombreCompleto.SelectedText = "";
             txtNombreCompleto.ShadowDecoration.CustomizableEdges = customizableEdges12;
             txtNombreCompleto.Size = new Size(192, 29);
@@ -359,29 +364,6 @@
             lblNumCuotas.Size = new Size(68, 17);
             lblNumCuotas.TabIndex = 34;
             lblNumCuotas.Text = "N de Cuotas";
-            // 
-            // btnGenerarCuotas
-            // 
-            btnGenerarCuotas.BorderRadius = 8;
-            btnGenerarCuotas.CustomizableEdges = customizableEdges33;
-            btnGenerarCuotas.DisabledState.BorderColor = Color.DarkGray;
-            btnGenerarCuotas.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnGenerarCuotas.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnGenerarCuotas.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnGenerarCuotas.FillColor = Color.FromArgb(26, 74, 115);
-            btnGenerarCuotas.Font = new Font("Segoe UI", 9F);
-            btnGenerarCuotas.ForeColor = Color.White;
-            btnGenerarCuotas.Image = Properties.Resources.bolsa_dinero;
-            btnGenerarCuotas.ImageAlign = HorizontalAlignment.Left;
-            btnGenerarCuotas.ImageSize = new Size(30, 30);
-            btnGenerarCuotas.Location = new Point(867, 578);
-            btnGenerarCuotas.Name = "btnGenerarCuotas";
-            btnGenerarCuotas.ShadowDecoration.CustomizableEdges = customizableEdges34;
-            btnGenerarCuotas.Size = new Size(150, 71);
-            btnGenerarCuotas.TabIndex = 33;
-            btnGenerarCuotas.Text = "General cuotas de prestamo";
-            btnGenerarCuotas.TextAlign = HorizontalAlignment.Left;
-            btnGenerarCuotas.Click += btnGenerarCuotas_Click;
             // 
             // txtMontoPagar
             // 
@@ -631,6 +613,29 @@
             lblMontoPrestamo.TabIndex = 15;
             lblMontoPrestamo.Text = "Monto del prestamo";
             // 
+            // btnGenerarCuotas
+            // 
+            btnGenerarCuotas.BorderRadius = 8;
+            btnGenerarCuotas.CustomizableEdges = customizableEdges33;
+            btnGenerarCuotas.DisabledState.BorderColor = Color.DarkGray;
+            btnGenerarCuotas.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnGenerarCuotas.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnGenerarCuotas.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnGenerarCuotas.FillColor = Color.FromArgb(26, 74, 115);
+            btnGenerarCuotas.Font = new Font("Segoe UI", 9F);
+            btnGenerarCuotas.ForeColor = Color.White;
+            btnGenerarCuotas.Image = Properties.Resources.bolsa_dinero;
+            btnGenerarCuotas.ImageAlign = HorizontalAlignment.Left;
+            btnGenerarCuotas.ImageSize = new Size(30, 30);
+            btnGenerarCuotas.Location = new Point(867, 578);
+            btnGenerarCuotas.Name = "btnGenerarCuotas";
+            btnGenerarCuotas.ShadowDecoration.CustomizableEdges = customizableEdges34;
+            btnGenerarCuotas.Size = new Size(150, 71);
+            btnGenerarCuotas.TabIndex = 33;
+            btnGenerarCuotas.Text = "General cuotas de prestamo";
+            btnGenerarCuotas.TextAlign = HorizontalAlignment.Left;
+            btnGenerarCuotas.Click += btnGenerarCuotas_Click;
+            // 
             // groupBox2
             // 
             groupBox2.Controls.Add(dtgvInfoCuotas);
@@ -641,29 +646,6 @@
             groupBox2.TabIndex = 3;
             groupBox2.TabStop = false;
             groupBox2.Text = "Informacion de cuotas";
-            // 
-            // btnRegistrarPrestamo
-            // 
-            btnRegistrarPrestamo.BorderRadius = 8;
-            btnRegistrarPrestamo.CustomizableEdges = customizableEdges35;
-            btnRegistrarPrestamo.DisabledState.BorderColor = Color.DarkGray;
-            btnRegistrarPrestamo.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnRegistrarPrestamo.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnRegistrarPrestamo.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnRegistrarPrestamo.FillColor = Color.FromArgb(34, 197, 94);
-            btnRegistrarPrestamo.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnRegistrarPrestamo.ForeColor = Color.White;
-            btnRegistrarPrestamo.Image = Properties.Resources.prestamo;
-            btnRegistrarPrestamo.ImageAlign = HorizontalAlignment.Left;
-            btnRegistrarPrestamo.ImageSize = new Size(30, 30);
-            btnRegistrarPrestamo.Location = new Point(224, 578);
-            btnRegistrarPrestamo.Name = "btnRegistrarPrestamo";
-            btnRegistrarPrestamo.ShadowDecoration.CustomizableEdges = customizableEdges36;
-            btnRegistrarPrestamo.Size = new Size(178, 71);
-            btnRegistrarPrestamo.TabIndex = 1;
-            btnRegistrarPrestamo.Text = "Registrar Prestamo";
-            btnRegistrarPrestamo.TextAlign = HorizontalAlignment.Left;
-            btnRegistrarPrestamo.Click += btnRegistrarPrestamo_Click;
             // 
             // dtgvInfoCuotas
             // 
@@ -730,6 +712,29 @@
             // 
             ColMontoCuota.HeaderText = "Monto";
             ColMontoCuota.Name = "ColMontoCuota";
+            // 
+            // btnRegistrarPrestamo
+            // 
+            btnRegistrarPrestamo.BorderRadius = 8;
+            btnRegistrarPrestamo.CustomizableEdges = customizableEdges35;
+            btnRegistrarPrestamo.DisabledState.BorderColor = Color.DarkGray;
+            btnRegistrarPrestamo.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnRegistrarPrestamo.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnRegistrarPrestamo.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnRegistrarPrestamo.FillColor = Color.FromArgb(34, 197, 94);
+            btnRegistrarPrestamo.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnRegistrarPrestamo.ForeColor = Color.White;
+            btnRegistrarPrestamo.Image = Properties.Resources.prestamo;
+            btnRegistrarPrestamo.ImageAlign = HorizontalAlignment.Left;
+            btnRegistrarPrestamo.ImageSize = new Size(30, 30);
+            btnRegistrarPrestamo.Location = new Point(224, 578);
+            btnRegistrarPrestamo.Name = "btnRegistrarPrestamo";
+            btnRegistrarPrestamo.ShadowDecoration.CustomizableEdges = customizableEdges36;
+            btnRegistrarPrestamo.Size = new Size(178, 71);
+            btnRegistrarPrestamo.TabIndex = 1;
+            btnRegistrarPrestamo.Text = "Registrar Prestamo";
+            btnRegistrarPrestamo.TextAlign = HorizontalAlignment.Left;
+            btnRegistrarPrestamo.Click += btnRegistrarPrestamo_Click;
             // 
             // PanelHeader
             // 

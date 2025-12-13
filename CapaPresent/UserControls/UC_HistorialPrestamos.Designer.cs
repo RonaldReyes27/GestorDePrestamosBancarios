@@ -209,7 +209,6 @@
             dgvResumenCuotas.ThemeStyle.RowsStyle.Height = 25;
             dgvResumenCuotas.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgvResumenCuotas.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            
             // 
             // groupBox3
             // 
@@ -245,6 +244,7 @@
             txtTelefono.Location = new Point(181, 119);
             txtTelefono.Name = "txtTelefono";
             txtTelefono.PlaceholderText = "";
+            txtTelefono.ReadOnly = true;
             txtTelefono.SelectedText = "";
             txtTelefono.ShadowDecoration.CustomizableEdges = customizableEdges6;
             txtTelefono.Size = new Size(200, 36);
@@ -274,6 +274,7 @@
             txtCorreo.Location = new Point(8, 119);
             txtCorreo.Name = "txtCorreo";
             txtCorreo.PlaceholderText = "";
+            txtCorreo.ReadOnly = true;
             txtCorreo.SelectedText = "";
             txtCorreo.ShadowDecoration.CustomizableEdges = customizableEdges8;
             txtCorreo.Size = new Size(165, 36);
@@ -302,6 +303,7 @@
             txtCiudad.Location = new Point(384, 52);
             txtCiudad.Name = "txtCiudad";
             txtCiudad.PlaceholderText = "";
+            txtCiudad.ReadOnly = true;
             txtCiudad.SelectedText = "";
             txtCiudad.ShadowDecoration.CustomizableEdges = customizableEdges10;
             txtCiudad.Size = new Size(104, 36);
@@ -330,6 +332,7 @@
             txtNumDoc.Location = new Point(213, 54);
             txtNumDoc.Name = "txtNumDoc";
             txtNumDoc.PlaceholderText = "";
+            txtNumDoc.ReadOnly = true;
             txtNumDoc.SelectedText = "";
             txtNumDoc.ShadowDecoration.CustomizableEdges = customizableEdges12;
             txtNumDoc.Size = new Size(165, 36);
@@ -358,6 +361,7 @@
             txtNombre.Location = new Point(6, 54);
             txtNombre.Name = "txtNombre";
             txtNombre.PlaceholderText = "";
+            txtNombre.ReadOnly = true;
             txtNombre.SelectedText = "";
             txtNombre.ShadowDecoration.CustomizableEdges = customizableEdges14;
             txtNombre.Size = new Size(200, 36);
@@ -414,6 +418,7 @@
             txtTotalAPagar.Location = new Point(347, 221);
             txtTotalAPagar.Name = "txtTotalAPagar";
             txtTotalAPagar.PlaceholderText = "";
+            txtTotalAPagar.ReadOnly = true;
             txtTotalAPagar.SelectedText = "";
             txtTotalAPagar.ShadowDecoration.CustomizableEdges = customizableEdges16;
             txtTotalAPagar.Size = new Size(140, 36);
@@ -442,6 +447,7 @@
             txtTotalInteres.Location = new Point(180, 221);
             txtTotalInteres.Name = "txtTotalInteres";
             txtTotalInteres.PlaceholderText = "";
+            txtTotalInteres.ReadOnly = true;
             txtTotalInteres.SelectedText = "";
             txtTotalInteres.ShadowDecoration.CustomizableEdges = customizableEdges18;
             txtTotalInteres.Size = new Size(161, 36);
@@ -470,6 +476,7 @@
             txtMontoPorCuotas.Location = new Point(6, 221);
             txtMontoPorCuotas.Name = "txtMontoPorCuotas";
             txtMontoPorCuotas.PlaceholderText = "";
+            txtMontoPorCuotas.ReadOnly = true;
             txtMontoPorCuotas.SelectedText = "";
             txtMontoPorCuotas.ShadowDecoration.CustomizableEdges = customizableEdges20;
             txtMontoPorCuotas.Size = new Size(161, 36);
@@ -498,6 +505,7 @@
             txtFechaInicio.Location = new Point(302, 142);
             txtFechaInicio.Name = "txtFechaInicio";
             txtFechaInicio.PlaceholderText = "";
+            txtFechaInicio.ReadOnly = true;
             txtFechaInicio.SelectedText = "";
             txtFechaInicio.ShadowDecoration.CustomizableEdges = customizableEdges22;
             txtFechaInicio.Size = new Size(127, 36);
@@ -526,6 +534,7 @@
             txtTipoMoneda.Location = new Point(180, 142);
             txtTipoMoneda.Name = "txtTipoMoneda";
             txtTipoMoneda.PlaceholderText = "";
+            txtTipoMoneda.ReadOnly = true;
             txtTipoMoneda.SelectedText = "";
             txtTipoMoneda.ShadowDecoration.CustomizableEdges = customizableEdges24;
             txtTipoMoneda.Size = new Size(107, 36);
@@ -554,6 +563,7 @@
             txtFormaPago.Location = new Point(6, 142);
             txtFormaPago.Name = "txtFormaPago";
             txtFormaPago.PlaceholderText = "";
+            txtFormaPago.ReadOnly = true;
             txtFormaPago.SelectedText = "";
             txtFormaPago.ShadowDecoration.CustomizableEdges = customizableEdges26;
             txtFormaPago.Size = new Size(161, 36);
@@ -582,6 +592,7 @@
             txtNumCuotas.Location = new Point(331, 59);
             txtNumCuotas.Name = "txtNumCuotas";
             txtNumCuotas.PlaceholderText = "";
+            txtNumCuotas.ReadOnly = true;
             txtNumCuotas.SelectedText = "";
             txtNumCuotas.ShadowDecoration.CustomizableEdges = customizableEdges28;
             txtNumCuotas.Size = new Size(88, 36);
@@ -601,6 +612,7 @@
             txtInteres.Location = new Point(212, 61);
             txtInteres.Name = "txtInteres";
             txtInteres.PlaceholderText = "";
+            txtInteres.ReadOnly = true;
             txtInteres.SelectedText = "";
             txtInteres.ShadowDecoration.CustomizableEdges = customizableEdges30;
             txtInteres.Size = new Size(113, 34);
@@ -630,6 +642,7 @@
             txtMontoPrestamo.Location = new Point(6, 59);
             txtMontoPrestamo.Name = "txtMontoPrestamo";
             txtMontoPrestamo.PlaceholderText = "";
+            txtMontoPrestamo.ReadOnly = true;
             txtMontoPrestamo.SelectedText = "";
             txtMontoPrestamo.ShadowDecoration.CustomizableEdges = customizableEdges32;
             txtMontoPrestamo.Size = new Size(200, 36);
