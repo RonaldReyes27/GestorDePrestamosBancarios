@@ -22,6 +22,14 @@ namespace CapaPresent
         public FrmMenu()
         {
             InitializeComponent();
+            Uc_Inicio inicio = new Uc_Inicio();
+            CargarUserControl(inicio);
+        }
+        private void CargarUserControl(UserControl uc)
+        {
+            PanelContenedor.Controls.Clear();
+            uc.Dock = DockStyle.Fill;
+            PanelContenedor.Controls.Add(uc);
         }
 
         private void btnMenu_Click(object sender, EventArgs e)
@@ -55,7 +63,7 @@ namespace CapaPresent
 
         private void MenuAnimacion_Tick(object sender, EventArgs e)
         {
-           
+
 
             if (menuExpandido)
             {
@@ -118,6 +126,11 @@ namespace CapaPresent
         private void btnHistorial_Click(object sender, EventArgs e)
         {
             AbrirUC(new UserControls.UC_HistorialPrestamos());
+        }
+
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+            AbrirUC(new UserControls.Uc_Inicio());
         }
     }
 }

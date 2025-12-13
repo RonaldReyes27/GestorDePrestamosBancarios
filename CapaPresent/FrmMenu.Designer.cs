@@ -213,6 +213,7 @@
             btnInicio.TabIndex = 5;
             btnInicio.Text = "Inicio";
             btnInicio.TextAlign = HorizontalAlignment.Left;
+            btnInicio.Click += btnInicio_Click;
             // 
             // btnClientes
             // 
