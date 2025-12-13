@@ -132,5 +132,11 @@ namespace CapaPresent
         {
             AbrirUC(new UserControls.Uc_Inicio());
         }
+
+        private void guna2ControlBoxClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+
+        }
     }
 }

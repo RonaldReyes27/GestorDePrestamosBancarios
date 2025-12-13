@@ -257,6 +257,7 @@
             txtCiudad.ShadowDecoration.CustomizableEdges = customizableEdges10;
             txtCiudad.Size = new Size(104, 36);
             txtCiudad.TabIndex = 9;
+            txtCiudad.TabStop = false;
             // 
             // guna2HtmlLabel7
             // 
@@ -286,6 +287,7 @@
             txtNumDoc.ShadowDecoration.CustomizableEdges = customizableEdges12;
             txtNumDoc.Size = new Size(165, 36);
             txtNumDoc.TabIndex = 5;
+            txtNumDoc.TabStop = false;
             // 
             // guna2HtmlLabel5
             // 
@@ -313,6 +315,7 @@
             txtNombreCompleto.ReadOnly = true;
             txtNombreCompleto.SelectedText = "";
             txtNombreCompleto.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            txtNombreCompleto.ShortcutsEnabled = false;
             txtNombreCompleto.Size = new Size(200, 36);
             txtNombreCompleto.TabIndex = 1;
             // 

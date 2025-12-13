@@ -136,6 +136,7 @@
             guna2ControlBoxClose.ShadowDecoration.CustomizableEdges = customizableEdges20;
             guna2ControlBoxClose.Size = new Size(45, 29);
             guna2ControlBoxClose.TabIndex = 3;
+            guna2ControlBoxClose.Click += guna2ControlBoxClose_Click;
             // 
             // guna2ControlBoxMin
             // 
